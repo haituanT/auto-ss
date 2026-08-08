@@ -6550,6 +6550,123 @@ summary,
   }
 }
 
+/* Compact desktop density: preserve mobile touch targets and existing behavior. */
+@media (min-width: 769px) {
+  .topbar {
+    gap: 6px;
+    padding: 4px 10px;
+  }
+
+  .brand {
+    gap: 8px;
+  }
+
+  .brand-mark,
+  .brand-mark img {
+    width: 32px;
+    height: 32px;
+  }
+
+  .topbar .action {
+    min-height: 44px;
+    padding: 6px 10px;
+    font-size: 13px;
+  }
+
+  .global-job-badge {
+    height: 26px;
+    padding-inline: 8px;
+    font-size: 11px;
+  }
+
+  .library-grid {
+    gap: 14px;
+    padding: 14px;
+  }
+
+  .library-grid > .panel {
+    padding: 12px;
+  }
+
+  .library-grid .action,
+  .library-grid .upload-button {
+    min-height: 38px;
+    padding-block: 6px;
+  }
+
+  .library-grid .project-library-tabs button {
+    min-height: 34px;
+    padding-block: 6px;
+  }
+
+  .video-row {
+    gap: 8px;
+    padding: 8px 10px;
+  }
+
+  .home-jobs-head {
+    margin-bottom: 8px;
+  }
+
+  .home-jobs-head h2 {
+    font-size: 18px;
+  }
+
+  .home-jobs-head > span {
+    padding: 4px 8px;
+  }
+
+  .home-job-table,
+  .home-jobs-history {
+    gap: 6px;
+  }
+
+  .home-jobs-history {
+    margin-top: 10px;
+    padding-top: 10px;
+  }
+
+  .home-job-row {
+    grid-template-columns: minmax(120px, 0.9fr) minmax(180px, 1.2fr) minmax(160px, 0.9fr) minmax(95px, 0.6fr) minmax(82px, auto);
+    gap: 8px;
+    padding: 7px 8px;
+    border-radius: 6px;
+  }
+
+  .home-job-row.head {
+    padding-block: 1px;
+  }
+
+  .home-job-row strong {
+    font-size: 12px;
+  }
+
+  .home-job-row span {
+    font-size: 11px;
+  }
+
+  .home-job-progress {
+    grid-template-columns: minmax(70px, 1fr) 34px;
+    gap: 6px;
+  }
+
+  .home-job-progress .progress-track {
+    height: 6px;
+  }
+
+  .home-job-actions {
+    gap: 4px;
+  }
+
+  .home-jobs-panel .home-job-actions button {
+    min-width: 38px;
+    min-height: 32px;
+    padding: 4px 7px;
+    border-radius: 6px;
+    font-size: 12px;
+  }
+}
+
 /* Keep the script panel actions together on wide desktop screens. */
 @media (min-width: 1321px) {
   .editor-grid {
