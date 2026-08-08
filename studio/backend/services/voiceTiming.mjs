@@ -219,6 +219,7 @@ export async function fetchElevenLabsForcedAlignment({
 export async function alignProjectLinesWithElevenLabs(root, config = {}, {
   apiKey = process.env.ELEVENLABS_API_KEY,
   fetchImpl = globalThis.fetch,
+  lineIds = null,
 } = {}) {
   if (!apiKey) {
     return { config, alignedCount: 0, errors: ["Missing ELEVENLABS_API_KEY."] };
@@ -227,9 +228,16 @@ export async function alignProjectLinesWithElevenLabs(root, config = {}, {
   const errors = [];
   let alignedCount = 0;
   const nextLines = [];
+  const targetLineIds = Array.isArray(lineIds) && lineIds.length
+    ? new Set(lineIds.map((value) => String(value || "").trim()).filter(Boolean))
+    : null;
   for (let index = 0; index < (config.lines || []).length; index += 1) {
     const line = config.lines[index];
     const id = String(line.id || `line-${index + 1}`);
+    if (targetLineIds && !targetLineIds.has(id)) {
+      nextLines.push({ ...line, id });
+      continue;
+    }
     const audioPath = lineAudioPath(root, id);
     const text = voiceTextForLine(line);
     try {

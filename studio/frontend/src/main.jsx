@@ -24,7 +24,6 @@ import {
   PanelLeftOpen,
   PanelRightClose,
   PanelRightOpen,
-  Pencil,
   Plus,
   RefreshCcw,
   RotateCcw,
@@ -3273,6 +3272,10 @@ function App() {
             normalizeLines={normalizeLines}
             draftSaving={draftSaving}
             busy={busy}
+            runJob={runJob}
+            selectedSlug={selectedSlug}
+            jobs={jobs}
+            aimaxApiKey={aimaxRuntimeApiKey}
           />
         </main>
       )}
@@ -5868,8 +5871,10 @@ function SoundImportModal({ draft, sources, busy, onClose, onSave }) {
   );
 }
 
-function buildAimaxJobBody({ voiceId, speed, pitch, apiKey } = {}) {
+function buildAimaxJobBody({ voiceId, speed, pitch, apiKey, lineId = "" } = {}) {
   const body = { mode: "aimax", voiceId, speed, pitch };
+  const selectedLineId = String(lineId || "").trim();
+  if (selectedLineId) body.lineId = selectedLineId;
   const key = String(apiKey || "").trim();
   if (key) body.apiKey = key;
   return body;
@@ -6656,20 +6661,7 @@ function ScriptPanel({ config, currentIndex, setCurrentIndex, updateConfig, norm
   );
 }
 
-function OfficialScriptPanel({ config, currentIndex, setCurrentIndex, updateContentDraft, commitContent, updateConfig, normalizeLines, draftSaving, busy }) {
-  const [editingLineId, setEditingLineId] = useState("");
-  const [editingText, setEditingText] = useState("");
-  const inlineEditorRef = useRef(null);
-  useEffect(() => {
-    if (!editingLineId) return undefined;
-    const frame = window.requestAnimationFrame(() => inlineEditorRef.current?.focus());
-    return () => window.cancelAnimationFrame(frame);
-  }, [editingLineId]);
-  useEffect(() => {
-    if (!editingLineId || !config || config.lines.some((line) => line.id === editingLineId)) return;
-    setEditingLineId("");
-    setEditingText("");
-  }, [config, editingLineId]);
+function OfficialScriptPanel({ config, currentIndex, setCurrentIndex, updateContentDraft, commitContent, updateConfig, normalizeLines, draftSaving, busy, runJob, selectedSlug, jobs = [], aimaxApiKey = "" }) {
   if (!config) return <aside className="script-panel empty">Chưa chọn project.</aside>;
   const sections = draftScriptSections(config);
   const script = contentFromSections(sections);
@@ -6682,45 +6674,10 @@ function OfficialScriptPanel({ config, currentIndex, setCurrentIndex, updateCont
     id,
     normalizeScriptText(sections[id]).split("\n").filter(Boolean).length,
   ]));
-  const canQuickEdit = !busy && !draftDirty;
-  const startQuickEdit = (line, index) => {
-    if (!canQuickEdit) return;
-    setCurrentIndex(index);
-    setEditingLineId(line.id);
-    setEditingText(line.text || "");
-  };
-  const cancelQuickEdit = () => {
-    setEditingLineId("");
-    setEditingText("");
-  };
-  const saveQuickEdit = () => {
-    const nextText = normalizeScriptLine(editingText);
-    const targetIndex = config.lines.findIndex((line) => line.id === editingLineId);
-    if (!nextText || targetIndex < 0) return;
-    const target = config.lines[targetIndex];
-    const targetSetId = normalizeCompareSetId(target.compareSetId);
-    const nextSections = contentSectionsFromLines(config.lines);
-    const targetLines = normalizeScriptText(nextSections[targetSetId]).split("\n").filter(Boolean);
-    const targetLineIndex = config.lines
-      .slice(0, targetIndex)
-      .filter((line) => normalizeCompareSetId(line.compareSetId) === targetSetId)
-      .length;
-    if (targetLineIndex >= targetLines.length) return;
-    targetLines[targetLineIndex] = nextText;
-    updateContentDraft({ ...nextSections, [targetSetId]: targetLines.join("\n") });
-    cancelQuickEdit();
-  };
-  const quickEditKeyDown = (event) => {
-    if (event.key === "Escape") {
-      event.preventDefault();
-      cancelQuickEdit();
-    } else if (event.key === "Enter" && !event.shiftKey) {
-      event.preventDefault();
-      saveQuickEdit();
-    }
-  };
+  const audioJobBusy = jobs.some((job) => job?.slug === selectedSlug && isAudioJob(job) && isRunningJob(job));
+  const ttsBusy = busy || audioJobBusy;
+  const canGenerateLineTts = !ttsBusy && !draftDirty && Boolean(selectedSlug);
   const displayLineText = (line, index) => {
-    if (editingLineId === line.id) return editingText;
     if (!draftDirty) return line.text;
     const targetSetId = normalizeCompareSetId(line.compareSetId);
     const targetLineIndex = config.lines
@@ -6729,6 +6686,17 @@ function OfficialScriptPanel({ config, currentIndex, setCurrentIndex, updateCont
       .length;
     const draftLines = normalizeScriptText(sections[targetSetId]).split("\n").filter(Boolean);
     return draftLines[targetLineIndex] || line.text;
+  };
+  const generateLineTts = (line, index) => {
+    if (!canGenerateLineTts || !runJob || !String(line?.text || "").trim()) return;
+    setCurrentIndex(index);
+    runJob(`/api/videos/${selectedSlug}/generate-vo`, buildAimaxJobBody({
+      voiceId: config.audio?.voiceId,
+      speed: config.audio?.speed,
+      pitch: config.audio?.pitch,
+      apiKey: aimaxApiKey,
+      lineId: line.id,
+    }));
   };
   return (
     <aside className="script-panel">
@@ -6764,8 +6732,8 @@ function OfficialScriptPanel({ config, currentIndex, setCurrentIndex, updateCont
         </div>
       </div>
       <div className={`script-edit-hint ${draftDirty ? "draft" : "ready"}`} role="note">
-        <Pencil size={14} />
-        <span>{draftDirty ? "Bản nháp đang mở: sửa trong ô Kịch bản, rồi bấm Lưu content." : "Bấm Sửa cạnh từng dòng để chỉnh nhanh, sau đó bấm Lưu content để chốt."}</span>
+        <FileAudio size={14} />
+        <span>{draftDirty ? "Bản nháp đang mở: sửa trong ô Kịch bản, rồi bấm Lưu content trước khi tạo TTS." : "Bấm TTS cạnh từng dòng để tạo lại đúng âm thanh cho dòng đó."}</span>
       </div>
       {draftDirty ? <div className="warning action-required" role="status">Bản nháp chưa dùng cho preview/render. Bấm Lưu content để chốt.</div> : null}
       {dirtyLineCount && !draftDirty ? <div className="warning action-required" role="status">Tạo lại âm thanh trước khi chốt bản render.</div> : null}
@@ -6794,51 +6762,24 @@ function OfficialScriptPanel({ config, currentIndex, setCurrentIndex, updateCont
       </div>
       <div className="line-list" aria-label="Danh sách dòng thoại đã lưu content">
         {config.lines.map((line, index) => {
-          const isEditing = editingLineId === line.id;
           const lineText = displayLineText(line, index);
           return (
-            <div className={`line-item-shell ${isEditing ? "editing" : ""}`} key={line.id}>
-              {isEditing ? (
-                <div className={`line-item line-item-editor ${line.role || "neutral"}`}>
-                  <span className="line-number">{index + 1}</span>
-                  <div className="line-inline-editor">
-                    <label className="line-inline-label">
-                      <span>Nội dung dòng {index + 1}</span>
-                      <input
-                        ref={inlineEditorRef}
-                        value={editingText}
-                        aria-label={`Chỉnh nội dung dòng ${index + 1}`}
-                        onChange={(event) => setEditingText(event.target.value)}
-                        onKeyDown={quickEditKeyDown}
-                        disabled={busy}
-                      />
-                    </label>
-                    <div className="line-inline-actions">
-                      <button type="button" className="line-inline-save" disabled={busy || !normalizeScriptLine(editingText)} onClick={saveQuickEdit}>Lưu dòng</button>
-                      <button type="button" className="line-inline-cancel" disabled={busy} onClick={cancelQuickEdit}>Hủy</button>
-                    </div>
-                    <small className="line-inline-help">Enter để lưu · Esc để hủy</small>
-                  </div>
-                </div>
-              ) : (
-                <>
-                  <button type="button" className={`line-item ${index === currentIndex ? "active" : ""} ${line.role || "neutral"}`} aria-current={index === currentIndex ? "true" : undefined} aria-label={`Dòng ${index + 1}: ${lineText}`} onClick={() => setCurrentIndex(index)}>
-                    <span className="line-number">{index + 1}</span>
-                    <strong>{lineText}</strong>
-                    <small><b className="compare-set-chip">{compareSetLabel(line.compareSetId)}</b> {line.role === "question" ? "Câu hỏi" : `Nội dung ${line.role || "?"}`} - {POSE_LABELS[line.pose] || line.pose}</small>
-                  </button>
-                  <button
-                    type="button"
-                    className="line-item-edit"
-                    disabled={!canQuickEdit}
-                    title={draftDirty ? "Hãy lưu content trước khi sửa nhanh từng dòng" : "Sửa nhanh dòng này"}
-                    aria-label={`Sửa nhanh dòng ${index + 1}`}
-                    onClick={() => startQuickEdit(line, index)}
-                  >
-                    <Pencil size={14} /> <span>Sửa</span>
-                  </button>
-                </>
-              )}
+            <div className="line-item-shell" key={line.id}>
+              <button type="button" className={`line-item ${index === currentIndex ? "active" : ""} ${line.role || "neutral"}`} aria-current={index === currentIndex ? "true" : undefined} aria-label={`Dòng ${index + 1}: ${lineText}`} onClick={() => setCurrentIndex(index)}>
+                <span className="line-number">{index + 1}</span>
+                <strong>{lineText}</strong>
+                <small><b className="compare-set-chip">{compareSetLabel(line.compareSetId)}</b> {line.role === "question" ? "Câu hỏi" : `Nội dung ${line.role || "?"}`} - {POSE_LABELS[line.pose] || line.pose}</small>
+              </button>
+              <button
+                type="button"
+                className="line-item-tts"
+                disabled={!canGenerateLineTts}
+                title={draftDirty ? "Hãy lưu content trước khi tạo TTS" : audioJobBusy ? "Đang tạo audio, hãy chờ job hiện tại hoàn tất" : "Tạo lại TTS cho đúng dòng này"}
+                aria-label={`Tạo TTS dòng ${index + 1}`}
+                onClick={() => generateLineTts(line, index)}
+              >
+                <FileAudio size={14} /> <span>TTS</span>
+              </button>
             </div>
           );
         })}

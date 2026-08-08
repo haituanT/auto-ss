@@ -31,11 +31,11 @@ function assertCommittedContent(config) {
   }
 }
 
-function pipelineAfterVoiceReady(config = {}) {
+function pipelineAfterVoiceReady(config = {}, { audioReady = true } = {}) {
   const pipeline = config.pipeline || {};
   const dirty = {
     content: false,
-    audio: false,
+    audio: !audioReady,
     assets: true,
     style: Boolean(pipeline.dirty?.style),
     layout: Boolean(pipeline.dirty?.layout),
@@ -46,6 +46,7 @@ function pipelineAfterVoiceReady(config = {}) {
       ...(pipeline.dirtyReasons || []).filter((reason) => !["content", "audio"].includes(reason)),
       "assets",
       "render",
+      ...(audioReady ? [] : ["audio"]),
     ]),
   ];
   return {
@@ -100,23 +101,28 @@ function voiceSettingsPatch(settings = {}) {
   return patch;
 }
 
-export function rewriteVoiceTimingsForVideo(root, durations, config = null, generatedVoiceSettings = {}) {
+export function rewriteVoiceTimingsForVideo(root, durations, config = null, generatedVoiceSettings = {}, { lineIds = null } = {}) {
   const sourceConfig = config || readJson(path.join(root, "video.json"));
+  const targetLineIds = Array.isArray(lineIds) && lineIds.length
+    ? new Set(lineIds.map((value) => String(value || "").trim()).filter(Boolean))
+    : null;
   let cursor = TIMELINE_START_SECONDS;
   const lines = (sourceConfig.lines || []).map((line, index) => {
     const lineWithoutWords = { ...(line || {}) };
-    delete lineWithoutWords.words;
-    delete lineWithoutWords.dirtyVoiceReason;
     const id = String(line.id || `line-${index + 1}`);
+    if (!targetLineIds || targetLineIds.has(id)) delete lineWithoutWords.words;
+    delete lineWithoutWords.dirtyVoiceReason;
     const duration = Number(durations[id]) || Number(line.duration) || 2.2;
     const start = Number(cursor.toFixed(3));
     cursor += duration + lineGapAfterSeconds(index);
+    const dirtyVoice = targetLineIds && !targetLineIds.has(id) ? Boolean(line.dirtyVoice) : false;
     return {
       ...lineWithoutWords,
       id,
       start,
       duration: Number(duration.toFixed(3)),
-      dirtyVoice: false,
+      dirtyVoice,
+      ...(dirtyVoice && line.dirtyVoiceReason ? { dirtyVoiceReason: line.dirtyVoiceReason } : {}),
     };
   });
 
@@ -140,14 +146,15 @@ export function rewriteVoiceTimingsForVideo(root, durations, config = null, gene
       srt: "assets/vo/audio.srt",
     },
   };
-  const savedConfig = pipelineAfterVoiceReady(nextConfig);
+  const savedConfig = pipelineAfterVoiceReady(nextConfig, { audioReady: !lines.some((line) => line.dirtyVoice) });
   fs.writeFileSync(path.join(root, "video.json"), `${JSON.stringify(savedConfig, null, 2)}\n`, "utf8");
   writeVoiceSettingsLock(root, savedConfig, {
     ...generatedVoiceSettings,
     source: "rewrite-voice-timings",
   });
+  const { outputs: _generatedOutputs, ...manifestSettings } = generatedVoiceSettings || {};
   const audioManifest = writeAudioManifest(root, savedConfig, {
-    ...generatedVoiceSettings,
+    ...manifestSettings,
     durations,
     source: "rewrite-voice-timings",
   });
@@ -155,11 +162,11 @@ export function rewriteVoiceTimingsForVideo(root, durations, config = null, gene
   return savedConfig;
 }
 
-async function applyConfiguredAlignment(root, config) {
+async function applyConfiguredAlignment(root, config, options = {}) {
   if (normalizeAlignmentProvider(config.audio?.alignmentProvider) !== "elevenlabs") return config;
-  const result = await alignProjectLinesWithElevenLabs(root, config);
+  const result = await alignProjectLinesWithElevenLabs(root, config, options);
   if (result.alignedCount > 0) {
-    const nextConfig = pipelineAfterVoiceReady(result.config);
+    const nextConfig = pipelineAfterVoiceReady(result.config, { audioReady: !result.config.lines.some((line) => line.dirtyVoice) });
     fs.writeFileSync(path.join(root, "video.json"), `${JSON.stringify(nextConfig, null, 2)}\n`, "utf8");
     syncProjectState(root, nextConfig);
     console.log(`ElevenLabs alignment: aligned ${result.alignedCount}/${nextConfig.lines.length} line(s).`);
@@ -203,7 +210,20 @@ async function generateFromSampleAudio({ lines, root, sampleAudioPath }) {
   return { durations, outputs: lines.map((line) => ({ id: line.id, file: `${line.id}.mp3`, duration: durations[line.id] })) };
 }
 
-export async function generateVoiceoverForVideo(root) {
+function existingDurations(root) {
+  const manifestPath = path.join(root, "assets", "vo", "manifest.json");
+  const durationsPath = path.join(root, "assets", "vo", "durations.json");
+  const manifest = fs.existsSync(manifestPath) ? readJson(manifestPath, null) : null;
+  if (manifest?.durations && typeof manifest.durations === "object") return manifest.durations;
+  return fs.existsSync(durationsPath) ? readJson(durationsPath, {}) : {};
+}
+
+function mergedDurationsForLines(root, resultDurations = {}, lineId = "") {
+  const next = lineId ? { ...existingDurations(root), ...resultDurations } : { ...resultDurations };
+  return Object.fromEntries(Object.entries(next).filter(([, duration]) => Number.isFinite(Number(duration)) && Number(duration) > 0));
+}
+
+export async function generateVoiceoverForVideo(root, { lineId: requestedLineId = "" } = {}) {
   const configPath = path.join(root, "video.json");
   if (!fs.existsSync(configPath)) {
     throw new Error(`Missing video.json in ${root}`);
@@ -215,6 +235,11 @@ export async function generateVoiceoverForVideo(root) {
   if (!lines.length) {
     throw new Error("video.json must contain at least one line.");
   }
+  const lineId = String(requestedLineId || process.env.AIMAX_LINE_ID || "").trim();
+  const linesToGenerate = lineId ? lines.filter((line) => line.id === lineId) : lines;
+  if (lineId && !linesToGenerate.length) {
+    throw new Error(`Unknown TTS line id: ${lineId}`);
+  }
 
   const sampleAudioPath = process.env.SAMPLE_AUDIO_PATH
     || (process.env.USE_SAMPLE_AUDIO === "1"
@@ -222,23 +247,26 @@ export async function generateVoiceoverForVideo(root) {
       : "");
 
   if (sampleAudioPath) {
-    const result = await generateFromSampleAudio({ lines, root, sampleAudioPath });
-    const durations = readJson(path.join(root, "assets", "vo", "durations.json"));
+    const result = await generateFromSampleAudio({ lines: linesToGenerate, root, sampleAudioPath });
+    const durations = mergedDurationsForLines(root, result.durations, lineId);
+    fs.writeFileSync(path.join(root, "assets", "vo", "durations.json"), `${JSON.stringify(durations, null, 2)}\n`, "utf8");
     const savedConfig = rewriteVoiceTimingsForVideo(root, durations, rawConfig, {
       provider: "sample",
       kind: "sample-audio",
       outputs: result.outputs || [],
-    });
-    await applyConfiguredAlignment(root, savedConfig);
+    }, { lineIds: lineId ? [lineId] : null });
+    await applyConfiguredAlignment(root, savedConfig, { lineIds: lineId ? [lineId] : null });
     return;
   }
 
-  const result = await generateVoiceover({ lines, root });
-  const savedConfig = rewriteVoiceTimingsForVideo(root, result.durations || {}, rawConfig, {
+  const result = await generateVoiceover({ lines: linesToGenerate, root });
+  const durations = mergedDurationsForLines(root, result.durations || {}, lineId);
+  fs.writeFileSync(path.join(root, "assets", "vo", "durations.json"), `${JSON.stringify(durations, null, 2)}\n`, "utf8");
+  const savedConfig = rewriteVoiceTimingsForVideo(root, durations, rawConfig, {
     ...(result.settings || {}),
     outputs: result.outputs || [],
-  });
-  await applyConfiguredAlignment(root, savedConfig);
+  }, { lineIds: lineId ? [lineId] : null });
+  await applyConfiguredAlignment(root, savedConfig, { lineIds: lineId ? [lineId] : null });
 }
 
 function sumDurations(durations) {

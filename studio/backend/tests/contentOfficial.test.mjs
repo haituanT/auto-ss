@@ -411,6 +411,55 @@ test("voice generation sends long TTS lines as-is without changing official cont
   });
 });
 
+test("targeted voice generation replaces only the requested line audio", async () => {
+  await withFixture(async () => {
+    const config = setupProject({ count: 3, prefix: "Targeted" });
+    config.audio = {
+      ...(config.audio || {}),
+      mainAudio: "",
+      srt: "",
+    };
+    config.lines = config.lines.map((line, index) => ({
+      ...line,
+      start: index,
+      duration: 1,
+      dirtyVoice: true,
+      dirtyVoiceReason: "content",
+    }));
+    writeJson(configPath, config);
+
+    const voDir = path.join(fixtureRoot, "assets", "vo");
+    fs.mkdirSync(voDir, { recursive: true });
+    fs.writeFileSync(path.join(voDir, "line-1.mp3"), "old-line-1", "utf8");
+    fs.writeFileSync(path.join(voDir, "line-3.mp3"), "old-line-3", "utf8");
+
+    const previousUseSample = process.env.USE_SAMPLE_AUDIO;
+    const previousSamplePath = process.env.SAMPLE_AUDIO_PATH;
+    process.env.USE_SAMPLE_AUDIO = "1";
+    delete process.env.SAMPLE_AUDIO_PATH;
+
+    try {
+      await generateVoiceoverForVideo(fixtureRoot, { lineId: "line-2" });
+    } finally {
+      if (previousUseSample === undefined) delete process.env.USE_SAMPLE_AUDIO;
+      else process.env.USE_SAMPLE_AUDIO = previousUseSample;
+      if (previousSamplePath === undefined) delete process.env.SAMPLE_AUDIO_PATH;
+      else process.env.SAMPLE_AUDIO_PATH = previousSamplePath;
+    }
+
+    const saved = JSON.parse(fs.readFileSync(configPath, "utf8"));
+    const durations = JSON.parse(fs.readFileSync(path.join(voDir, "durations.json"), "utf8"));
+
+    assert.equal(saved.lines.find((line) => line.id === "line-2").dirtyVoice, false);
+    assert.equal(saved.lines.find((line) => line.id === "line-1").dirtyVoice, true);
+    assert.equal(saved.lines.find((line) => line.id === "line-3").dirtyVoice, true);
+    assert.deepEqual(Object.keys(durations), ["line-2"]);
+    assert.equal(fs.readFileSync(path.join(voDir, "line-1.mp3"), "utf8"), "old-line-1");
+    assert.equal(fs.readFileSync(path.join(voDir, "line-3.mp3"), "utf8"), "old-line-3");
+    assert.ok(fs.statSync(path.join(voDir, "line-2.mp3")).size > 0);
+  });
+});
+
 test("voice timing rewrite stores resolved AIMAX voice settings", () => {
   withFixture(() => {
     const config = setupProject({ count: 1, prefix: "Resolved voice" });

@@ -451,6 +451,7 @@ app.post("/api/videos/:slug/generate-vo", (req, res, next) => {
       voiceId: req.body?.voiceId,
       speed: req.body?.speed,
       pitch: req.body?.pitch,
+      lineId: req.body?.lineId,
       apiKey: req.body?.apiKey,
       baseUrl: req.body?.baseUrl,
     }));

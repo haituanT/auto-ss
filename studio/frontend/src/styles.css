@@ -4705,7 +4705,7 @@ textarea {
   font-weight: 700;
 }
 
-.line-item-edit {
+.line-item-tts {
   display: inline-flex;
   min-width: 58px;
   align-items: center;
@@ -4721,76 +4721,9 @@ textarea {
   font-weight: 800;
 }
 
-.line-item-edit:not(:disabled):hover {
+.line-item-tts:not(:disabled):hover {
   border-color: #78bcae;
   background: #edf9f4;
-}
-
-.line-item-editor {
-  grid-column: 1 / -1;
-  grid-template-columns: 32px minmax(0, 1fr);
-  align-items: start;
-}
-
-.line-inline-editor {
-  display: grid;
-  min-width: 0;
-  gap: 8px;
-}
-
-.line-inline-label {
-  display: grid;
-  min-width: 0;
-  gap: 5px;
-  color: var(--text-muted);
-  font-size: 11px;
-  font-weight: 750;
-}
-
-.line-inline-label input {
-  width: 100%;
-  min-width: 0;
-  min-height: 40px;
-  border: 1px solid #78bcae;
-  border-radius: 7px;
-  padding: 8px 10px;
-  background: #fffdf8;
-  color: var(--text);
-  font-size: 14px;
-  font-weight: 600;
-}
-
-.line-inline-actions {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: flex-end;
-  gap: 6px;
-}
-
-.line-inline-actions button {
-  min-height: 34px;
-  border: 1px solid #d7cbbb;
-  border-radius: 7px;
-  padding: 5px 9px;
-  font-size: 12px;
-  font-weight: 800;
-}
-
-.line-inline-save {
-  border-color: var(--primary) !important;
-  background: var(--primary);
-  color: #fffdf8;
-}
-
-.line-inline-cancel {
-  background: #fff8ea;
-  color: var(--text);
-}
-
-.line-inline-help {
-  color: var(--text-muted);
-  font-size: 11px;
-  line-height: 1.2;
 }
 
 .line-item strong {

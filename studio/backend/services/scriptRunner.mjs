@@ -173,16 +173,18 @@ export function runGenerateVo(slug, mode = "aimax", options = {}) {
   const voiceId = String(options.voiceId || "");
   const speed = options.speed === undefined || options.speed === null ? "" : String(options.speed);
   const pitch = options.pitch === undefined || options.pitch === null ? "" : String(options.pitch);
+  const lineId = String(options.lineId || "").trim();
   const keyFingerprint = secretFingerprint(options.apiKey);
+  const runtimeEnv = mode === "sample"
+    ? { USE_SAMPLE_AUDIO: "1", SAMPLE_AUDIO_PATH, ...(lineId ? { AIMAX_LINE_ID: lineId } : {}) }
+    : { ...aimaxRuntimeEnv(options), ...(lineId ? { AIMAX_LINE_ID: lineId } : {}), AIMAX_TTS_TRIM_SILENCE: "1" };
   return runCommand({
     type: mode === "sample" ? "generate-vo-sample" : "generate-vo",
     slug,
     command: "node",
     args: ["scripts/generate-vo.mjs"],
-    env: mode === "sample"
-      ? { USE_SAMPLE_AUDIO: "1", SAMPLE_AUDIO_PATH }
-      : { ...aimaxRuntimeEnv(options), AIMAX_TTS_TRIM_SILENCE: "1" },
-    idempotencyKey: "generate-vo:" + slug + ":" + mode + ":" + voiceId + ":" + speed + ":" + pitch + ":" + keyFingerprint,
+    env: runtimeEnv,
+    idempotencyKey: "generate-vo:" + slug + ":" + mode + ":" + (lineId || "all") + ":" + voiceId + ":" + speed + ":" + pitch + ":" + keyFingerprint,
   });
 }
 
