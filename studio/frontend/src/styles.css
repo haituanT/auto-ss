@@ -294,6 +294,39 @@ summary:focus-visible,
   gap: 10px;
 }
 
+.app-update-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  min-height: 28px;
+  padding: 5px 9px;
+  border: 1px solid var(--primary);
+  border-radius: 999px;
+  background: var(--success-bg);
+  color: var(--primary-strong);
+  font: inherit;
+  font-size: 12px;
+  font-weight: 750;
+  cursor: pointer;
+  white-space: nowrap;
+}
+
+.app-update-pill:hover:not(:disabled) {
+  background: var(--primary);
+  color: #fff;
+}
+
+.app-update-pill.blocked {
+  border-color: var(--accent);
+  background: var(--accent-soft);
+  color: var(--accent);
+}
+
+.app-update-pill:disabled {
+  cursor: wait;
+  opacity: 0.72;
+}
+
 .brand-mark {
   width: 36px;
   height: 36px;

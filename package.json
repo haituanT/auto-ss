@@ -14,8 +14,9 @@
     "build:studio": "vite build --config studio/frontend/vite.config.js",
     "test:studio": "node --test --test-concurrency=1 studio/backend/tests/*.test.mjs",
     "test:aimax-tts": "node --test scripts/tests/*.test.mjs",
+    "test:app-update": "node --test app/electron/gitUpdate.test.cjs",
     "migrate:template-scope": "node scripts/migrate-template-scope.mjs",
-    "test": "npm run test:studio && npm run test:aimax-tts",
+    "test": "npm run test:studio && npm run test:aimax-tts && npm run test:app-update",
     "qa:studio-ui": "node scripts/studio-ui-smoke.mjs",
     "qa:studio": "npm run build:studio && npm test && npm run qa:studio-ui"
   },

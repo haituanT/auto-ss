@@ -1,13 +1,52 @@
-const { app, BrowserWindow, shell } = require('electron');
+const { spawn } = require('node:child_process');
+const { app, BrowserWindow, ipcMain, shell } = require('electron');
 const path = require('path');
+const { applyGitUpdate, checkForUpdates } = require('./gitUpdate.cjs');
 
 const APP_URL = process.env.AUTO_COMPARE_APP_URL || 'http://127.0.0.1:3101';
+const ROOT_DIR = path.resolve(__dirname, '..', '..');
 const USER_DATA_DIR = process.env.AUTO_COMPARE_USER_DATA_DIR
   || (process.env.LOCALAPPDATA
     ? path.join(process.env.LOCALAPPDATA, 'AutoCompareStudio', 'electron-profile')
     : path.join(app.getPath('home'), '.config', 'AutoCompareStudio', 'electron-profile'));
 const PRELOAD_PATH = path.join(__dirname, 'preload.cjs');
-const APP_ICON_PATH = path.join(__dirname, '..', '..', 'studio', 'frontend', 'public', 'auto-compare-logo-v2.png');
+const APP_ICON_PATH = path.join(ROOT_DIR, 'studio', 'frontend', 'public', 'auto-compare-logo-v2.png');
+
+let relaunchScheduled = false;
+
+function relaunchFromSource() {
+  if (relaunchScheduled) return;
+  relaunchScheduled = true;
+
+  const npmCommand = process.platform === 'win32' ? 'npm.cmd' : 'npm';
+  const command = process.platform === 'win32' ? (process.env.ComSpec || 'cmd.exe') : npmCommand;
+  const args = process.platform === 'win32'
+    ? ['/d', '/s', '/c', npmCommand, 'run', 'app']
+    : ['run', 'app'];
+  const env = { ...process.env };
+  delete env.ELECTRON_RUN_AS_NODE;
+
+  const child = spawn(command, args, {
+    cwd: ROOT_DIR,
+    env,
+    detached: true,
+    stdio: 'ignore',
+    windowsHide: true,
+    shell: false,
+  });
+  child.unref();
+  setTimeout(() => app.quit(), 700);
+}
+
+ipcMain.handle('app-update:check', () => checkForUpdates({ rootDir: ROOT_DIR }));
+ipcMain.handle('app-update:apply', async () => {
+  const result = await applyGitUpdate({ rootDir: ROOT_DIR });
+  if (result.status === 'updated') {
+    relaunchFromSource();
+    return { ...result, restarting: true };
+  }
+  return result;
+});
 
 app.setName('Auto Compare Studio');
 app.setPath('userData', USER_DATA_DIR);

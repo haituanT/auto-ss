@@ -19,6 +19,12 @@ Project này là video dọc 1080×1920 về sự khác nhau giữa ADN và gen,
 
 `node_modules/`, `.env`, API key, file tạm, render và project video riêng không nằm trong repository. API key chỉ điền trong `.env` trên máy cần tạo voiceover mới.
 
+## Cập nhật code từ Git
+
+Khi mở bằng `start-studio.bat` hoặc `npm.cmd run app`, app sẽ kiểm tra `origin/main` lúc khởi động và định kỳ. Nếu GitHub có commit mới, thanh trên cùng sẽ hiện nút `Có bản mới`.
+
+Bấm nút đó để app tải code mới, chạy `npm install` nếu file thư viện thay đổi, rồi tự mở lại bằng bản mới. App không cập nhật nếu thư mục đang có file sửa cục bộ để tránh ghi đè code hoặc dữ liệu của bạn.
+
 ## Lệnh chính
 
 Từ thư mục gốc:

@@ -1755,6 +1755,8 @@ function App() {
   const [finalSnapshot, setFinalSnapshot] = useState(null);
   const [snapshotBusy, setSnapshotBusy] = useState(false);
   const [notice, setNotice] = useState("");
+  const [appUpdate, setAppUpdate] = useState(null);
+  const [appUpdateBusy, setAppUpdateBusy] = useState(false);
   const [busy, setBusy] = useState(false);
   const [checking, setChecking] = useState(false);
   const [moreActionsOpen, setMoreActionsOpen] = useState(false);
@@ -1772,6 +1774,7 @@ function App() {
   const jobsPollInitialized = useRef(false);
   const remoteVideoSyncKeyRef = useRef("");
   const remotePreviewAssetSyncKeyRef = useRef("");
+  const appUpdateNoticeCommitRef = useRef("");
 
   useEffect(() => {
     if (screen !== "editor" || activeTab !== "audio") stopPreviewSound();
@@ -1830,6 +1833,49 @@ function App() {
     if (!selectedSlug && selected) setSelectedSlug(selected.slug);
     if (selectedSlug && selected) setSelectedVideo(videoWithLocalDraft(selected));
     return { status: nextStatus, assets: nextAssets, videos: nextVideos, jobs: nextJobs, templates: nextTemplates.templates || [] };
+  }
+
+  async function checkAppUpdate({ silent = false } = {}) {
+    const updater = window.autoCompareDesktop?.update;
+    if (!updater?.check) return null;
+    setAppUpdateBusy(true);
+    try {
+      const result = await updater.check();
+      setAppUpdate(result);
+      if (!silent && result.status === "update-available") {
+        setNotice(`Có bản code mới ${result.latestShortCommit || ""}. Hãy bấm “Có bản mới” để mở bản mới.`);
+      } else if (!silent && result.status === "unavailable") {
+        setNotice(result.error || "Không kiểm tra được bản code mới.");
+      }
+      return result;
+    } catch (error) {
+      if (!silent) setNotice(error.message || "Không kiểm tra được bản code mới.");
+      return null;
+    } finally {
+      setAppUpdateBusy(false);
+    }
+  }
+
+  async function applyAppUpdate() {
+    const updater = window.autoCompareDesktop?.update;
+    if (!updater?.apply) return null;
+    setAppUpdateBusy(true);
+    setNotice("Đang tải code mới từ Git và chuẩn bị mở lại app...");
+    try {
+      const result = await updater.apply();
+      if (result.status === "updated" && result.restarting) {
+        setNotice("Đã cập nhật. App đang mở lại bằng bản code mới...");
+      } else {
+        setAppUpdate(result);
+        setNotice(result.error || result.reason || "Chưa thể cập nhật bản mới.");
+      }
+      return result;
+    } catch (error) {
+      setNotice(error.message || "Cập nhật bản mới thất bại.");
+      return null;
+    } finally {
+      setAppUpdateBusy(false);
+    }
   }
 
   async function testAimaxVoices(apiKey = aimaxRuntimeApiKey) {
@@ -1947,6 +1993,33 @@ function App() {
     return () => {
       clearTimeout(saveTimer.current);
       clearTimeout(draftSaveTimer.current);
+    };
+  }, []);
+
+  useEffect(() => {
+    const updater = window.autoCompareDesktop?.update;
+    if (!updater?.check) return undefined;
+    let stopped = false;
+
+    async function pollAppUpdate() {
+      try {
+        const result = await updater.check();
+        if (stopped) return;
+        setAppUpdate(result);
+        if (result.status === "update-available" && appUpdateNoticeCommitRef.current !== result.latestCommit) {
+          appUpdateNoticeCommitRef.current = result.latestCommit;
+          setNotice(`Có bản code mới ${result.latestShortCommit || ""}. Hãy bấm “Có bản mới” để mở bản mới.`);
+        }
+      } catch {
+        // Update checks are optional; the editor remains usable while offline.
+      }
+    }
+
+    pollAppUpdate();
+    const timer = window.setInterval(pollAppUpdate, 5 * 60 * 1000);
+    return () => {
+      stopped = true;
+      window.clearInterval(timer);
     };
   }, []);
 
@@ -2969,6 +3042,18 @@ function App() {
             <strong>Auto Compare Studio</strong>
             <span className="app-version">v{APP_VERSION}</span>
           </div>
+          {appUpdate?.status === "update-available" ? (
+            <button
+              type="button"
+              className={`app-update-pill ${appUpdate.canUpdate ? "" : "blocked"}`}
+              disabled={appUpdateBusy}
+              onClick={applyAppUpdate}
+              title={appUpdate.canUpdate ? `Cập nhật lên ${appUpdate.latestShortCommit}` : appUpdate.reason}
+            >
+              <Download size={14} />
+              {appUpdateBusy ? "Đang cập nhật..." : appUpdate.canUpdate ? "Có bản mới" : "Có bản mới · cần lưu"}
+            </button>
+          ) : null}
         </div>
         <GlobalJobStrip jobs={jobs} selectedJobId={selectedJobId} onOpenJob={openJob} />
         <div className="top-actions">
@@ -2978,6 +3063,11 @@ function App() {
             ) : (
               <ActionButton tone="quiet" onClick={() => setScreen("library")}><FolderOpen size={16} /> Trang chủ</ActionButton>
             )}
+            {typeof window !== "undefined" && window.autoCompareDesktop?.update?.check ? (
+              <ActionButton tone="quiet" disabled={appUpdateBusy} onClick={() => checkAppUpdate()} title="Kiểm tra code mới trên GitHub">
+                <RefreshCcw size={16} /> {appUpdateBusy ? "Đang kiểm tra" : "Kiểm tra bản mới"}
+              </ActionButton>
+            ) : null}
             <ActionButton tone="quiet" onClick={() => openTemplateLibrary("all")}><FolderOpen size={16} /> Mẫu đã lưu</ActionButton>
           </div>
           {!isLibraryScreen ? (
