@@ -1,0 +1,200 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <style>
+      @font-face {
+        font-family: "Be Vietnam Pro";
+        src: url("https://fonts.gstatic.com/s/bevietnampro/v11/QdVMSTAyLFyeg_IDWvOJmVES_HT4JG86Rb0.woff2") format("woff2");
+        font-weight: 900;
+      }
+      :root {
+        --bg: #f3eee3;
+        --fg: #171411;
+        --panel: #fffdf7;
+        --panel-edge: #171411;
+        --accent-pink: #ff4fa3;
+        --accent-cyan: #37e6c4;
+      }
+      * { box-sizing: border-box; }
+      html, body { margin: 0; width: 1080px; height: 1920px; overflow: hidden; background: var(--bg); font-family: "Be Vietnam Pro", sans-serif; }
+      #root { position: relative; width: 1080px; height: 1920px; background: var(--bg); }
+      #scene { position: absolute; inset: 0; overflow: hidden; }
+      #paper-bg { position: absolute; inset: 0; z-index: 0; width: 100%; height: 100%; object-fit: cover; opacity: 1; filter: contrast(1) brightness(1) saturate(1.02) blur(14.0px); transform: scale(1.0311); transform-origin: 50% 50%; }
+      #paper-bg-boost { position: absolute; inset: 0; z-index: 1; width: 100%; height: 100%; object-fit: cover; opacity: 0; filter: contrast(1) brightness(.94) saturate(.42) blur(14.0px); transform: scale(1.0311); transform-origin: 50% 50%; mix-blend-mode: multiply; }
+      #paper-bg-wash { position: absolute; inset: 0; z-index: 2; pointer-events: none; mix-blend-mode: multiply; background: linear-gradient(180deg, rgba(255, 253, 248, .08) 0%, rgba(232, 216, 193, 0) 100%), radial-gradient(ellipse at 50% 50%, rgba(255, 255, 255, 0) 0 50%, rgba(42, 27, 15, 0) 100%); }
+      .card { position: absolute; top: 256px; z-index: 3; width: 500px; height: 500px; display: flex; flex-direction: column; overflow: hidden; border: none; border-radius: 0; background: transparent; box-shadow: none; transform-origin: 50% 50%; }
+      #card-left { left: 24px; }
+      #card-right { left: 556px; }
+      .image-window { position: relative; width: 100%; height: 500px; overflow: hidden; background: #fffdf7; }
+      .compare-img { display: block; position: relative; z-index: 1; width: 100%; height: 500px; object-fit: cover; background: #fffdf7; }
+      .focus-shade { position: absolute; inset: 0; z-index: 2; pointer-events: none; background: rgba(0, 0, 0, 0.350); opacity: 0; }
+      .label { display: grid; flex: 1; width: 100%; place-items: center; overflow: hidden; padding: 10px 16px; color: #20160f; font-size: 42px; font-weight: 900; letter-spacing: .01em; text-align: center; text-transform: uppercase; }
+      #vs { position: absolute; top: 451px; left: 485px; z-index: 4; width: 110px; height: 110px; display: grid; place-items: center; border: 6px solid #20160f; border-radius: 50%; background: #ff4f2f; color: #fffdf8; font-size: 34px; font-weight: 900; box-shadow: 0 12px 0 rgba(23,20,17,.22); }
+      #caption-zone { position: absolute; left: 55px; top: 800px; z-index: 4; width: 970px; height: 330px; display: grid; place-items: center; }
+      .caption-line { position: absolute; max-width: 900px; opacity: 0; color: var(--fg); font-family: "Be Vietnam Pro", sans-serif; font-size: 58px; font-weight: 900; line-height: 1.18; text-align: center; text-shadow: none; }
+      .caption-line span { display: inline; background: #fffdf7; border: 5px solid var(--panel-edge); box-decoration-break: clone; -webkit-box-decoration-break: clone; padding: 14px 24px 16px; box-shadow: 12px 12px 0 rgba(23,20,17,.22); }
+      #character-stage { position: absolute; inset: 0; z-index: 2; width: 1080px; height: 1920px; overflow: hidden; pointer-events: none; }
+      .pose-video { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: contain; object-position: center; opacity: 0; filter: drop-shadow(0 18px 22px rgba(0,0,0,.24)); }
+    </style>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3/dist/gsap.min.js"></script>
+  </head>
+  <body>
+    <div id="root" data-composition-id="main" data-start="0" data-width="1080" data-height="1920" data-duration="46.74">
+      <section id="scene">
+        <img id="paper-bg" src="assets/backgrounds/paper.png" />
+        <img id="paper-bg-boost" src="assets/backgrounds/paper.png" />
+        <div id="paper-bg-wash"></div>
+        <div id="card-left" class="card"><div class="image-window"><img id="compare-img-left" class="compare-img" src="assets/illustrations/compare-1-left.png" /><div id="focus-shade-left" class="focus-shade"></div></div><div id="compare-label-left" class="label">GEN</div></div>
+        <div id="card-right" class="card"><div class="image-window"><img id="compare-img-right" class="compare-img" src="assets/illustrations/compare-1-right.png" /><div id="focus-shade-right" class="focus-shade"></div></div><div id="compare-label-right" class="label">ADN</div></div>
+        
+        <div id="character-stage">
+          <video id="pose-point-left" class="pose-video clip" src="assets/character/point-left.png" muted loop playsinline data-start="0" data-duration="46.74" data-track-index="10"></video>
+          <video id="pose-point-right" class="pose-video clip" src="assets/character/point-right.png" muted loop playsinline data-start="0" data-duration="46.74" data-track-index="11"></video>
+          <video id="pose-question" class="pose-video clip" src="assets/character/question.png" muted loop playsinline data-start="0" data-duration="46.74" data-track-index="12"></video>
+        </div>
+        <div id="caption-zone">
+          <div class="caption-line" id="line-1"><span>Đây là ADN.</span></div>
+          <div class="caption-line" id="line-2"><span>Đây là gen.</span></div>
+          <div class="caption-line" id="line-3"><span>Sự khác nhau là gì?</span></div>
+          <div class="caption-line" id="line-4"><span>ADN là phân tử mang thông tin di truyền của sinh vật. Nó giống như một cuốn sách hướng dẫn rất dài, chứa các thông tin giúp cơ thể hình thành, phát triển và hoạt động.</span></div>
+          <div class="caption-line" id="line-5"><span>Gen là một đoạn ADN có chức năng nhất định. Nó có thể mang thông tin liên quan đến việc tạo ra một loại protein hoặc ảnh hưởng đến một đặc điểm sinh học nào đó.</span></div>
+          <div class="caption-line" id="line-6"><span>Đây là hồng cầu.</span></div>
+          <div class="caption-line" id="line-7"><span>Đây là bạch cầu.</span></div>
+          <div class="caption-line" id="line-8"><span>Sự khác nhau là gì?</span></div>
+          <div class="caption-line" id="line-9"><span>Hồng cầu là tế bào máu có nhiệm vụ chính là vận chuyển oxy. Nhờ hồng cầu, oxy từ phổi được đưa đi khắp cơ thể để não, tim, cơ bắp và các cơ quan khác hoạt động. Có màu đỏ vì chứa huyết sắc tố, nên máu của chúng ta nhìn có màu đỏ.</span></div>
+          <div class="caption-line" id="line-10"><span>Bạch cầu thì khác nó liên quan đến hệ miễn dịch. Nó giống như đội bảo vệ của cơ thể, giúp chống lại vi khuẩn, virus, ký sinh trùng hoặc những yếu tố lạ xâm nhập.</span></div>
+        </div>
+      </section>
+      <audio id="vo-1" src="assets/vo/line-1.mp3" data-start="0.55" data-duration="1.566" data-track-index="20"></audio>
+      <audio id="vo-2" src="assets/vo/line-2.mp3" data-start="2.236" data-duration="0.756" data-track-index="20"></audio>
+      <audio id="vo-3" src="assets/vo/line-3.mp3" data-start="3.112" data-duration="1.152" data-track-index="20"></audio>
+      <audio id="vo-4" src="assets/vo/line-4.mp3" data-start="4.384" data-duration="7.452" data-track-index="20"></audio>
+      <audio id="vo-5" src="assets/vo/line-5.mp3" data-start="11.956" data-duration="7.488" data-track-index="20"></audio>
+      <audio id="vo-6" src="assets/vo/line-6.mp3" data-start="19.564" data-duration="1.656" data-track-index="20"></audio>
+      <audio id="vo-7" src="assets/vo/line-7.mp3" data-start="21.34" data-duration="1.512" data-track-index="20"></audio>
+      <audio id="vo-8" src="assets/vo/line-8.mp3" data-start="22.972" data-duration="1.044" data-track-index="20"></audio>
+      <audio id="vo-9" src="assets/vo/line-9.mp3" data-start="24.136" data-duration="12.852" data-track-index="20"></audio>
+      <audio id="vo-10" src="assets/vo/line-10.mp3" data-start="37.108" data-duration="8.136" data-track-index="20"></audio>
+    </div>
+    <script>
+      window.__timelines = window.__timelines || {};
+      const tl = gsap.timeline({ paused: true });
+      const VO = {
+        1: { id: "line-1", compareSetId: "compare-1", pose: "point-left", focusSide: "right", start: 0.55, dur: 1.566 },
+        2: { id: "line-2", compareSetId: "compare-1", pose: "point-right", focusSide: "left", start: 2.236, dur: 0.756 },
+        3: { id: "line-3", compareSetId: "compare-1", pose: "question", focusSide: "center", start: 3.112, dur: 1.152 },
+        4: { id: "line-4", compareSetId: "compare-1", pose: "point-left", focusSide: "right", start: 4.384, dur: 7.452 },
+        5: { id: "line-5", compareSetId: "compare-1", pose: "point-right", focusSide: "left", start: 11.956, dur: 7.488 },
+        6: { id: "line-6", compareSetId: "compare-2", pose: "point-left", focusSide: "right", start: 19.564, dur: 1.656 },
+        7: { id: "line-7", compareSetId: "compare-2", pose: "point-right", focusSide: "left", start: 21.34, dur: 1.512 },
+        8: { id: "line-8", compareSetId: "compare-2", pose: "question", focusSide: "center", start: 22.972, dur: 1.044 },
+        9: { id: "line-9", compareSetId: "compare-2", pose: "point-left", focusSide: "right", start: 24.136, dur: 12.852 },
+        10: { id: "line-10", compareSetId: "compare-2", pose: "point-right", focusSide: "left", start: 37.108, dur: 8.136 }
+      };
+      const COMPARE_SETS = {"compare-1":{"leftLabel":"GEN","rightLabel":"ADN","leftImage":"assets/illustrations/compare-1-left.png","rightImage":"assets/illustrations/compare-1-right.png","leftZoom":1,"rightZoom":1,"leftCrop":{"x":0,"y":0,"rotation":0},"rightCrop":{"x":0,"y":0,"rotation":0}},"compare-2":{"leftLabel":"Hồng cầu","rightLabel":"bạch cầu","leftImage":"assets/illustrations/compare-2-left.png","rightImage":"assets/illustrations/compare-2-right.png","leftZoom":1,"rightZoom":1,"leftCrop":{"x":0,"y":0,"rotation":0},"rightCrop":{"x":0,"y":0,"rotation":0}}};
+      const poses = ["point-left", "point-right", "question"];
+      function applyImageCrop(img, zoom, crop) {
+        const source = crop || {};
+        if (source.mode === "region" && Number.isFinite(Number(source.width)) && Number.isFinite(Number(source.height))) {
+          const width = Math.max(0.01, Math.min(1, Number(source.width) || 1));
+          const height = Math.max(0.01, Math.min(1, Number(source.height) || 1));
+          const x = Math.max(0, Math.min(1 - width, Number(source.x) || 0));
+          const y = Math.max(0, Math.min(1 - height, Number(source.y) || 0));
+          const rotation = Number(source.rotation) || 0;
+          Object.assign(img.style, {
+            position: "absolute",
+            left: ((-x / width) * 100) + "%",
+            top: ((-y / height) * 100) + "%",
+            width: (100 / width) + "%",
+            height: (100 / height) + "%",
+            maxWidth: "none",
+            objectFit: "fill",
+            transform: rotation ? "rotate(" + rotation + "deg)" : "none",
+            transformOrigin: "50% 50%",
+          });
+          return;
+        }
+        const x = Number(source.x) || 0;
+        const y = Number(source.y) || 0;
+        const rotation = Number(source.rotation) || 0;
+        Object.assign(img.style, {
+          position: "relative",
+          left: "0",
+          top: "0",
+          width: "100%",
+          height: "500px",
+          maxWidth: "",
+          objectFit: "cover",
+          transform: "translate(" + x + "%, " + y + "%) scale(" + (Number(zoom) || 1) + ") rotate(" + rotation + "deg)",
+          transformOrigin: "50% 50%",
+        });
+      }
+      function applyCompareSet(setId) {
+        const set = COMPARE_SETS[setId] || COMPARE_SETS["compare-1"];
+        const leftImg = document.getElementById("compare-img-left");
+        const rightImg = document.getElementById("compare-img-right");
+        leftImg.src = set.leftImage || "";
+        rightImg.src = set.rightImage || "";
+        applyImageCrop(leftImg, set.leftZoom, set.leftCrop);
+        applyImageCrop(rightImg, set.rightZoom, set.rightCrop);
+        document.getElementById("compare-label-left").textContent = set.leftLabel || "A";
+        document.getElementById("compare-label-right").textContent = set.rightLabel || "B";
+      }
+      function setCompare(setId, at) {
+        tl.call(() => applyCompareSet(setId), [], at);
+      }
+      applyCompareSet("compare-1");
+      function showPose(name, at) {
+        poses.forEach((pose) => tl.to("#pose-" + pose, { opacity: pose === name ? 1 : 0, duration: 0.16 }, at));
+      }
+      function showLine(lineId, at, outAt) {
+        tl.fromTo("#" + lineId, { y: 24, opacity: 0 }, { y: 0, opacity: 1, duration: 0.28, ease: "power3.out" }, at);
+        if (outAt != null) tl.to("#" + lineId, { y: -18, opacity: 0, duration: 0.18, ease: "power2.in" }, outAt);
+      }
+      const focusScaleTemplate = false;
+      const focusScaleLarge = 1.18;
+      const focusScaleSmall = 0.82;
+      const focusMotionDuration = 0.5;
+      const focusImageBlur = 2.5;
+      function focusSideForPose(name) {
+        if (name === "point-left") return "left";
+        if (name === "point-right") return "right";
+        return "center";
+      }
+      function focusState(side) {
+        if (side === "left") return { left: { scale: focusScaleLarge, x: -24, opacity: 1, z: 5 }, right: { scale: focusScaleSmall, x: 34, opacity: .84, z: 3 } };
+        if (side === "right") return { left: { scale: focusScaleSmall, x: -34, opacity: .84, z: 3 }, right: { scale: focusScaleLarge, x: 24, opacity: 1, z: 5 } };
+        return { left: { scale: 1, x: 0, opacity: 1, z: 3 }, right: { scale: 1, x: 0, opacity: 1, z: 3 } };
+      }
+      function focusImageState(side) {
+        if (side === "left") return { left: { blur: 0, shade: 0 }, right: { blur: focusImageBlur, shade: 1 } };
+        if (side === "right") return { left: { blur: focusImageBlur, shade: 1 }, right: { blur: 0, shade: 0 } };
+        return { left: { blur: 0, shade: 0 }, right: { blur: 0, shade: 0 } };
+      }
+      function applyFocus(line, at) {
+        if (!focusScaleTemplate) return;
+        const side = line.focusSide || focusSideForPose(line.pose);
+        const state = focusState(side);
+        const imageState = focusImageState(side);
+        tl.to("#card-left", { scale: state.left.scale, x: state.left.x, zIndex: state.left.z, duration: focusMotionDuration, ease: "power3.out" }, at);
+        tl.to("#card-right", { scale: state.right.scale, x: state.right.x, zIndex: state.right.z, duration: focusMotionDuration, ease: "power3.out" }, at);
+        tl.to("#compare-img-left", { filter: "blur(" + imageState.left.blur + "px)", duration: focusMotionDuration, ease: "power3.out" }, at);
+        tl.to("#compare-img-right", { filter: "blur(" + imageState.right.blur + "px)", duration: focusMotionDuration, ease: "power3.out" }, at);
+        tl.to("#focus-shade-left", { opacity: imageState.left.shade, duration: focusMotionDuration, ease: "power3.out" }, at);
+        tl.to("#focus-shade-right", { opacity: imageState.right.shade, duration: focusMotionDuration, ease: "power3.out" }, at);
+      }
+      tl.set("#card-left, #card-right", { scale: 1, opacity: 1 });
+      Object.values(VO).forEach((line, index, all) => {
+        const next = all[index + 1];
+        const outAt = index === all.length - 1 ? null : Math.min(line.start + line.dur, (next?.start ?? line.start + line.dur) - .02);
+        setCompare(line.compareSetId || "compare-1", line.start);
+        applyFocus(line, line.start);
+        showPose(line.pose, line.start);
+        showLine(line.id, line.start, outAt);
+      });
+      
+      window.__timelines["main"] = tl;
+    </script>
+  </body>
+</html>

@@ -1,0 +1,14 @@
+[Script Info]
+Title: Auto Compare Video - subtitle card demo
+ScriptType: v4.00+
+PlayResX: 1080
+PlayResY: 1920
+ScaledBorderAndShadow: yes
+
+[V4+ Styles]
+Format: Name,Fontname,Fontsize,PrimaryColour,SecondaryColour,OutlineColour,BackColour,Bold,Italic,Underline,StrikeOut,ScaleX,ScaleY,Spacing,Angle,BorderStyle,Outline,Shadow,Alignment,MarginL,MarginR,MarginV,Encoding
+Style: Caption,Arial,48,&H0016181A,&H000000FF,&H00F0F9FF,&H0016181A,-1,0,0,0,100,100,0,0,3,22,0,2,70,70,190,1
+
+[Events]
+Format: Layer,Start,End,Style,Name,MarginL,MarginR,MarginV,Effect,Text
+Dialogue: 0,0:00:00.00,0:00:05.00,Caption,,0,0,0,,Dev xây sản phẩm.\NDevOps giúp sản phẩm vận hành ổn định.

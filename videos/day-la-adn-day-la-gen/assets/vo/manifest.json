@@ -1,0 +1,78 @@
+{
+  "version": 1,
+  "kind": "per-line-tts",
+  "provider": "aimax",
+  "model": "",
+  "voiceId": "uv_0c793269",
+  "speed": 1,
+  "textHash": "4e588b146f786724ab42802e0075fdb0d75f2ea0984e823fed3a8ec704f1d282",
+  "lineCount": 10,
+  "mainAudio": "",
+  "srt": "assets/vo/audio.srt",
+  "durations": {
+    "line-1": 1.566,
+    "line-2": 0.756,
+    "line-3": 1.152,
+    "line-4": 7.452,
+    "line-5": 7.488,
+    "line-6": 1.656,
+    "line-7": 1.512,
+    "line-8": 1.044,
+    "line-9": 12.852,
+    "line-10": 8.136
+  },
+  "outputs": [
+    {
+      "id": "line-1",
+      "file": "line-1.mp3",
+      "duration": 1.566
+    },
+    {
+      "id": "line-2",
+      "file": "line-2.mp3",
+      "duration": 0.756
+    },
+    {
+      "id": "line-3",
+      "file": "line-3.mp3",
+      "duration": 1.152
+    },
+    {
+      "id": "line-4",
+      "file": "line-4.mp3",
+      "duration": 7.452
+    },
+    {
+      "id": "line-5",
+      "file": "line-5.mp3",
+      "duration": 7.488
+    },
+    {
+      "id": "line-6",
+      "file": "line-6.mp3",
+      "duration": 1.656
+    },
+    {
+      "id": "line-7",
+      "file": "line-7.mp3",
+      "duration": 1.512
+    },
+    {
+      "id": "line-8",
+      "file": "line-8.mp3",
+      "duration": 1.044
+    },
+    {
+      "id": "line-9",
+      "file": "line-9.mp3",
+      "duration": 12.852
+    },
+    {
+      "id": "line-10",
+      "file": "line-10.mp3",
+      "duration": 8.136
+    }
+  ],
+  "source": "restored-from-public-remotion-job",
+  "generatedAt": "2026-08-02T08:55:05.271Z"
+}

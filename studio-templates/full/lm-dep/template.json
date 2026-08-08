@@ -1,0 +1,300 @@
+{
+  "version": 4,
+  "scopeVersion": 2,
+  "id": "lm-dep",
+  "type": "full",
+  "name": "lm đẹp",
+  "description": "",
+  "createdAt": "2026-08-07T17:38:59.982Z",
+  "updatedAt": "2026-08-07T17:40:41.699Z",
+  "sourceSlug": "dau-tay-trang",
+  "parts": {
+    "caption": true,
+    "character": true,
+    "audio": true,
+    "layout": true,
+    "background": true,
+    "render": true,
+    "content": false
+  },
+  "config": {
+    "caption": {
+      "style": "clean-outline",
+      "animation": "word-color",
+      "fontFamily": "Be Vietnam Pro",
+      "fontSize": 50,
+      "normalColor": "#20160f",
+      "hotColor": "#e94d15",
+      "strokeColor": "#fffaf0",
+      "strokeWidth": 10,
+      "wordGap": 0,
+      "uppercase": false,
+      "shadowPreset": "default"
+    },
+    "layout": {
+      "captionY": 750,
+      "captionYExplicit": true,
+      "compareLabelPlacement": "auto",
+      "compareLabelAlign": "center",
+      "compareLabelFontSize": 0,
+      "compareLabelHeight": 110,
+      "compareLabelPaddingX": 18,
+      "compareLabelPaddingY": 10,
+      "compareLabelColor": "#20160f",
+      "compareLabelBackground": "#fffdf8",
+      "compareLabelBackgroundOpacity": 0,
+      "compareLabelBorderColor": "#20160f",
+      "compareLabelBorderWidth": 0,
+      "compareLabelRadius": 0,
+      "compareLabelShadow": "none",
+      "width": 1080,
+      "height": 1920,
+      "compareTop": 170,
+      "compareHeight": 520,
+      "dualCompareSize": 410,
+      "dualCompareOffsetY": 0,
+      "photoCompareSize": 490,
+      "photoCompareOffsetY": 90,
+      "compareLabelUppercase": false,
+      "compareVsColor": "#ff4f2f",
+      "compareVsTextColor": "#fffdf8",
+      "compareVsBorderColor": "#20160f",
+      "photoFrameBorderColor": "#20160f",
+      "photoFrameShadowColor": "#20160f",
+      "photoLabelColor": "#20160f",
+      "focusScaleLarge": 1.18,
+      "focusScaleSmall": 0.82,
+      "focusMotionDuration": 0.5,
+      "focusImageBlur": 2.5,
+      "focusImageDarkness": 0.35,
+      "characterY": 1180,
+      "characterHeight": 650
+    },
+    "character": {
+      "packId": "default",
+      "captionFontFamily": "Be Vietnam Pro",
+      "scale": 1.65,
+      "x": 0,
+      "y": -80,
+      "poses": {
+        "point-left": "assets/character/point-left.png",
+        "point-right": "assets/character/point-right.png",
+        "question": "assets/character/question.png"
+      },
+      "poseSources": {
+        "point-left": {
+          "preview": "assets/character/point-left.png",
+          "render": "assets/character/point-left.png",
+          "state": "ready"
+        },
+        "point-right": {
+          "preview": "assets/character/point-right.png",
+          "render": "assets/character/point-right.png",
+          "state": "ready"
+        },
+        "question": {
+          "preview": "assets/character/question.png",
+          "render": "assets/character/question.png",
+          "state": "ready"
+        }
+      }
+    },
+    "audio": {
+      "provider": "aimax",
+      "voiceId": "uv_756c81ef",
+      "speed": 1.1,
+      "pitch": 0,
+      "voiceVolume": 1,
+      "bgm": "",
+      "bgmVolume": 0.18,
+      "sceneStartSfx": {
+        "enabled": true,
+        "skipFirst": true,
+        "mode": "pose",
+        "name": "assets/audio/sfx/mixkit-hard-pop-click.wav",
+        "volume": 0.82,
+        "poseVolumes": {
+          "point-left": 0.82,
+          "point-right": 0.82,
+          "question": 0.82
+        },
+        "offsetMs": 0
+      }
+    },
+    "poseSfx": {
+      "point-left": "assets/audio/sfx/mixkit-hard-pop-click.wav",
+      "point-right": "assets/audio/sfx/mixkit-hard-pop-click.wav",
+      "question": "assets/audio/sfx/mixkit-bubble-pop.wav"
+    },
+    "template": {
+      "id": "photo-clean-frame-v1",
+      "name": "Ảnh khung trơn",
+      "version": 1
+    },
+    "poseStartSide": "right",
+    "background": {
+      "type": "image",
+      "src": "assets/background/paper.png",
+      "color": "#ffffff",
+      "treatment": "enhanced",
+      "detail": 0,
+      "shade": 0,
+      "blur": 0
+    },
+    "logo": {
+      "enabled": true,
+      "src": "assets/logo/logo.png",
+      "width": 355,
+      "anchor": "bottom-left",
+      "x": -30,
+      "y": -470,
+      "opacity": 0.3,
+      "layer": "above-character",
+      "backdrop": false
+    },
+    "render": {
+      "engine": "remotion",
+      "width": 1080,
+      "height": 1920,
+      "fps": 30,
+      "preferredMode": "gpu"
+    }
+  },
+  "assets": {
+    "character": {
+      "point-left": "assets/character/point-left.png",
+      "point-right": "assets/character/point-right.png",
+      "question": "assets/character/question.png"
+    },
+    "audio/sfx": {
+      "mixkit-hard-pop-click": "assets/audio/sfx/mixkit-hard-pop-click.wav",
+      "mixkit-bubble-pop": "assets/audio/sfx/mixkit-bubble-pop.wav"
+    },
+    "background": {
+      "paper": "assets/background/paper.png"
+    },
+    "logo": {
+      "logo": "assets/logo/logo.png"
+    }
+  },
+  "changelog": [
+    {
+      "version": 1,
+      "updatedAt": "2026-08-07T17:38:59.982Z",
+      "sourceSlug": "dau-tay-trang",
+      "diffs": []
+    },
+    {
+      "version": 2,
+      "updatedAt": "2026-08-07T17:39:35.818Z",
+      "sourceSlug": "dau-tay-trang",
+      "diffs": [
+        {
+          "part": "character",
+          "key": "character.poseSources.point-left.state",
+          "label": "character poseSources point-left state",
+          "before": "image-ready",
+          "after": "ready"
+        },
+        {
+          "part": "character",
+          "key": "character.poseSources.point-right.state",
+          "label": "character poseSources point-right state",
+          "before": "image-ready",
+          "after": "ready"
+        },
+        {
+          "part": "character",
+          "key": "character.poseSources.question.state",
+          "label": "character poseSources question state",
+          "before": "image-ready",
+          "after": "ready"
+        },
+        {
+          "part": "logo",
+          "key": "logo.opacity",
+          "label": "Độ trong logo",
+          "before": "0.3",
+          "after": "0.35"
+        },
+        {
+          "part": "logo",
+          "key": "logo.x",
+          "label": "Logo ngang",
+          "before": "-30",
+          "after": "10"
+        },
+        {
+          "part": "logo",
+          "key": "logo.y",
+          "label": "Logo dọc",
+          "before": "-470",
+          "after": "-440"
+        }
+      ]
+    },
+    {
+      "version": 3,
+      "updatedAt": "2026-08-07T17:40:03.334Z",
+      "sourceSlug": "dau-tay-trang",
+      "diffs": [
+        {
+          "part": "character",
+          "key": "character.poseSources.point-left.state",
+          "label": "character poseSources point-left state",
+          "before": "image-ready",
+          "after": "ready"
+        },
+        {
+          "part": "character",
+          "key": "character.poseSources.point-right.state",
+          "label": "character poseSources point-right state",
+          "before": "image-ready",
+          "after": "ready"
+        },
+        {
+          "part": "character",
+          "key": "character.poseSources.question.state",
+          "label": "character poseSources question state",
+          "before": "image-ready",
+          "after": "ready"
+        },
+        {
+          "part": "layout",
+          "key": "poseStartSide",
+          "label": "Bắt đầu chỉ bên",
+          "before": "right",
+          "after": "left"
+        }
+      ]
+    },
+    {
+      "version": 4,
+      "updatedAt": "2026-08-07T17:40:41.699Z",
+      "sourceSlug": "dau-tay-trang",
+      "diffs": [
+        {
+          "part": "character",
+          "key": "character.poseSources.point-left.state",
+          "label": "character poseSources point-left state",
+          "before": "image-ready",
+          "after": "ready"
+        },
+        {
+          "part": "character",
+          "key": "character.poseSources.point-right.state",
+          "label": "character poseSources point-right state",
+          "before": "image-ready",
+          "after": "ready"
+        },
+        {
+          "part": "character",
+          "key": "character.poseSources.question.state",
+          "label": "character poseSources question state",
+          "before": "image-ready",
+          "after": "ready"
+        }
+      ]
+    }
+  ]
+}

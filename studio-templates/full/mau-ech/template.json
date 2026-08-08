@@ -1,0 +1,230 @@
+{
+  "version": 19,
+  "id": "mau-ech",
+  "type": "full",
+  "name": "MẪU ẾCH",
+  "description": "",
+  "createdAt": "2026-08-01T18:12:52.338Z",
+  "updatedAt": "2026-08-07T15:49:13.627Z",
+  "sourceSlug": "7-88j",
+  "parts": {
+    "caption": true,
+    "character": true,
+    "audio": true,
+    "layout": true,
+    "background": true,
+    "render": true,
+    "content": false
+  },
+  "config": {
+    "caption": {
+      "style": "capcut-karaoke",
+      "animation": "word-color",
+      "fontFamily": "Saira",
+      "fontSize": 48,
+      "normalColor": "#ffffff",
+      "hotColor": "#ffe600",
+      "strokeColor": "#000000",
+      "strokeWidth": 8,
+      "wordGap": 7,
+      "uppercase": true,
+      "shadowPreset": "capcut-heavy"
+    },
+    "layout": {
+      "captionY": 770,
+      "captionYExplicit": true,
+      "width": 1080,
+      "height": 1920,
+      "compareTop": 170,
+      "compareHeight": 520,
+      "photoCompareSize": 480,
+      "photoCompareOffsetY": 120,
+      "compareLabelUppercase": false,
+      "compareVsColor": "#ff4f2f",
+      "compareVsTextColor": "#fffdf8",
+      "compareVsBorderColor": "#20160f",
+      "photoFrameBorderColor": "#20160f",
+      "photoFrameShadowColor": "#20160f",
+      "photoLabelColor": "#20160f",
+      "focusScaleLarge": 1.18,
+      "focusScaleSmall": 0.82,
+      "focusMotionDuration": 0.5,
+      "focusImageBlur": 2.5,
+      "focusImageDarkness": 0.55,
+      "characterY": 1180,
+      "characterHeight": 650
+    },
+    "character": {
+      "packId": "default",
+      "captionFontFamily": "Saira",
+      "scale": 1.55,
+      "x": 40,
+      "y": -110,
+      "poses": {
+        "point-left": "assets/character/point-left.png",
+        "point-right": "assets/character/point-right.png",
+        "question": "assets/character/question.png"
+      },
+      "poseSources": {
+        "point-left": {
+          "preview": "assets/character/point-left.png",
+          "render": "assets/character/point-left.png",
+          "state": "ready"
+        },
+        "point-right": {
+          "preview": "assets/character/point-right.png",
+          "render": "assets/character/point-right.png",
+          "state": "ready"
+        },
+        "question": {
+          "preview": "assets/character/question.png",
+          "render": "assets/character/question.png",
+          "state": "ready"
+        }
+      }
+    },
+    "audio": {
+      "provider": "aimax",
+      "voiceId": "uv_0c793269",
+      "speed": 1.05,
+      "pitch": 0,
+      "voiceVolume": 1,
+      "bgm": "",
+      "bgmVolume": 0.18,
+      "sceneStartSfx": {
+        "enabled": true,
+        "skipFirst": true,
+        "mode": "pose",
+        "name": "assets/audio/sfx/mixkit-hard-pop-click.wav",
+        "volume": 0.82,
+        "poseVolumes": {
+          "point-left": 0.82,
+          "point-right": 0.82,
+          "question": 0.82
+        },
+        "offsetMs": 0
+      }
+    },
+    "poseSfx": {
+      "point-left": "assets/audio/sfx/69.mp3",
+      "point-right": "assets/audio/sfx/69.mp3",
+      "question": "assets/audio/sfx/87.mp3"
+    },
+    "template": {
+      "id": "photo-clean-frame-v1",
+      "name": "Ảnh khung trơn",
+      "version": 1
+    },
+    "poseStartSide": "right",
+    "background": {
+      "type": "image",
+      "src": "assets/background/paper.png",
+      "color": "#f7efe1",
+      "treatment": "enhanced",
+      "detail": 2,
+      "shade": 0,
+      "blur": 18
+    },
+    "logo": {
+      "enabled": true,
+      "src": "assets/logo/logo.png",
+      "width": 295,
+      "anchor": "bottom-left",
+      "x": 0,
+      "y": -250,
+      "opacity": 0.55,
+      "layer": "below-character",
+      "backdrop": false
+    },
+    "render": {
+      "engine": "remotion",
+      "width": 1080,
+      "height": 1920,
+      "fps": 30,
+      "preferredMode": "gpu"
+    }
+  },
+  "assets": {
+    "character": {
+      "point-left": "assets/character/point-left.png",
+      "point-right": "assets/character/point-right.png",
+      "question": "assets/character/question.png"
+    },
+    "audio/sfx": {
+      "69": "assets/audio/sfx/69.mp3",
+      "87": "assets/audio/sfx/87.mp3",
+      "mixkit-hard-pop-click": "assets/audio/sfx/mixkit-hard-pop-click.wav"
+    },
+    "background": {
+      "paper": "assets/background/paper.png"
+    },
+    "logo": {
+      "logo": "assets/logo/logo.png"
+    }
+  },
+  "scopeVersion": 2,
+  "changelog": [
+    {
+      "version": 18,
+      "updatedAt": "2026-08-07T13:52:25.636Z",
+      "sourceSlug": "6-8",
+      "migration": "template-scope-v2",
+      "diffs": [
+        {
+          "key": "compare.leftLabel",
+          "label": "Strip compare.leftLabel"
+        },
+        {
+          "key": "compare.rightLabel",
+          "label": "Strip compare.rightLabel"
+        },
+        {
+          "key": "compare.leftZoom",
+          "label": "Strip compare.leftZoom"
+        },
+        {
+          "key": "compare.rightZoom",
+          "label": "Strip compare.rightZoom"
+        },
+        {
+          "key": "compare.leftCrop",
+          "label": "Strip compare.leftCrop"
+        },
+        {
+          "key": "compare.rightCrop",
+          "label": "Strip compare.rightCrop"
+        },
+        {
+          "key": "compareSets",
+          "label": "Strip compareSets"
+        }
+      ]
+    },
+    {
+      "version": 18,
+      "updatedAt": "2026-08-07T13:53:03.935Z",
+      "sourceSlug": "6-8",
+      "migration": "template-scope-v2",
+      "diffs": [
+        {
+          "key": "legacy non-whitelisted template config",
+          "label": "Strip legacy non-whitelisted template config"
+        }
+      ]
+    },
+    {
+      "version": 19,
+      "updatedAt": "2026-08-07T15:49:13.627Z",
+      "sourceSlug": "7-88j",
+      "diffs": [
+        {
+          "part": "layout",
+          "key": "poseStartSide",
+          "label": "Bắt đầu chỉ bên",
+          "before": "right",
+          "after": "trống"
+        }
+      ]
+    }
+  ]
+}

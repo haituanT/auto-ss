@@ -1,0 +1,520 @@
+{
+  "version": 4,
+  "slug": "day-la-adn-day-la-gen",
+  "title": "3-8",
+  "savedTemplateRef": null,
+  "template": {
+    "id": "photo-compare-v1",
+    "name": "Ảnh xếp theo bố cục",
+    "version": 1
+  },
+  "compare": {
+    "id": "compare-1",
+    "leftLabel": "U Lành Tính",
+    "rightLabel": "U Ác Tính",
+    "leftImage": "assets/illustrations/compare-1-left.png",
+    "rightImage": "assets/illustrations/compare-1-right.png",
+    "leftZoom": 1,
+    "rightZoom": 1,
+    "leftCrop": {
+      "mode": "region",
+      "x": 0.17712,
+      "y": 0,
+      "width": 0.66667,
+      "height": 1,
+      "rotation": 0
+    },
+    "rightCrop": {
+      "x": 0,
+      "y": 0,
+      "rotation": 0
+    },
+    "aiImages": {
+      "left": {
+        "state": "ready",
+        "provider": "agy",
+        "style": "realistic",
+        "selectedVariant": 1,
+        "asset": "assets/illustrations/compare-1-left.png",
+        "variants": [
+          "assets/illustrations/compare-1-left-v1.png",
+          "assets/illustrations/compare-1-left-v2.png"
+        ],
+        "prompt": "U Lành Tính",
+        "error": "",
+        "updatedAt": "2026-08-03T16:59:01.152Z",
+        "jobId": "",
+        "history": [
+          "assets/illustrations/history/compare-1-left-20260803165900.png",
+          "assets/illustrations/history/compare-1-left-20260803162839.png"
+        ]
+      },
+      "right": {
+        "state": "ready",
+        "provider": "agy",
+        "style": "realistic",
+        "selectedVariant": 1,
+        "asset": "assets/illustrations/compare-1-right.png",
+        "variants": [
+          "assets/illustrations/compare-1-right-v1.png",
+          "assets/illustrations/compare-1-right-v2.png"
+        ],
+        "prompt": "U Ác Tính",
+        "error": "",
+        "updatedAt": "2026-08-03T16:59:00.280Z",
+        "jobId": "",
+        "history": [
+          "assets/illustrations/history/compare-1-right-20260803165900.png",
+          "assets/illustrations/history/compare-1-right-20260803162833.png"
+        ]
+      }
+    }
+  },
+  "compareSets": [
+    {
+      "id": "compare-1",
+      "leftLabel": "U Lành Tính",
+      "rightLabel": "U Ác Tính",
+      "leftImage": "assets/illustrations/compare-1-left.png",
+      "rightImage": "assets/illustrations/compare-1-right.png",
+      "leftZoom": 1,
+      "rightZoom": 1,
+      "leftCrop": {
+        "mode": "region",
+        "x": 0.17712,
+        "y": 0,
+        "width": 0.66667,
+        "height": 1,
+        "rotation": 0
+      },
+      "rightCrop": {
+        "x": 0,
+        "y": 0,
+        "rotation": 0
+      },
+      "aiImages": {
+        "left": {
+          "state": "ready",
+          "provider": "agy",
+          "style": "realistic",
+          "selectedVariant": 1,
+          "asset": "assets/illustrations/compare-1-left.png",
+          "variants": [
+            "assets/illustrations/compare-1-left-v1.png",
+            "assets/illustrations/compare-1-left-v2.png"
+          ],
+          "prompt": "U Lành Tính",
+          "error": "",
+          "updatedAt": "2026-08-03T16:59:01.152Z",
+          "jobId": "",
+          "history": [
+            "assets/illustrations/history/compare-1-left-20260803165900.png",
+            "assets/illustrations/history/compare-1-left-20260803162839.png"
+          ]
+        },
+        "right": {
+          "state": "ready",
+          "provider": "agy",
+          "style": "realistic",
+          "selectedVariant": 1,
+          "asset": "assets/illustrations/compare-1-right.png",
+          "variants": [
+            "assets/illustrations/compare-1-right-v1.png",
+            "assets/illustrations/compare-1-right-v2.png"
+          ],
+          "prompt": "U Ác Tính",
+          "error": "",
+          "updatedAt": "2026-08-03T16:59:00.280Z",
+          "jobId": "",
+          "history": [
+            "assets/illustrations/history/compare-1-right-20260803165900.png",
+            "assets/illustrations/history/compare-1-right-20260803162833.png"
+          ]
+        }
+      }
+    },
+    {
+      "id": "compare-2",
+      "leftLabel": "Sữa Thanh Trùng",
+      "rightLabel": "Sữa Tiệt Trùng",
+      "leftImage": "assets/illustrations/compare-2-left.png",
+      "rightImage": "assets/illustrations/compare-2-right.png",
+      "leftZoom": 1,
+      "rightZoom": 1,
+      "leftCrop": {
+        "mode": "region",
+        "x": 0,
+        "y": 0,
+        "width": 1,
+        "height": 1,
+        "rotation": 0
+      },
+      "rightCrop": {
+        "mode": "region",
+        "x": 0,
+        "y": 0,
+        "width": 1,
+        "height": 1,
+        "rotation": 0
+      },
+      "aiImages": {
+        "left": {
+          "state": "ready",
+          "provider": "agy",
+          "style": "realistic",
+          "selectedVariant": 1,
+          "asset": "assets/illustrations/compare-2-left.png",
+          "variants": [
+            "assets/illustrations/compare-2-left-v1.png",
+            "assets/illustrations/compare-2-left-v2.png"
+          ],
+          "prompt": "Sữa Thanh Trùng",
+          "error": "",
+          "updatedAt": "2026-08-03T16:35:08.748Z",
+          "jobId": "",
+          "history": [
+            "assets/illustrations/history/compare-2-left-20260803163508.png",
+            "assets/illustrations/history/compare-2-left-20260803162852.png"
+          ]
+        },
+        "right": {
+          "state": "ready",
+          "provider": "agy",
+          "style": "realistic",
+          "selectedVariant": 1,
+          "asset": "assets/illustrations/compare-2-right.png",
+          "variants": [
+            "assets/illustrations/compare-2-right-v1.png",
+            "assets/illustrations/compare-2-right-v2.png"
+          ],
+          "prompt": "Sữa Tiệt Trùng",
+          "error": "",
+          "updatedAt": "2026-08-03T16:34:58.668Z",
+          "jobId": "",
+          "history": [
+            "assets/illustrations/history/compare-2-right-20260803163458.png",
+            "assets/illustrations/history/compare-2-right-20260803162839.png"
+          ]
+        }
+      }
+    }
+  ],
+  "poseStartSide": "left",
+  "logo": {
+    "enabled": true,
+    "src": "assets/logo/logo.png",
+    "width": 280,
+    "anchor": "bottom-left",
+    "x": 70,
+    "y": -320,
+    "opacity": 0.4,
+    "layer": "above-character",
+    "backdrop": false
+  },
+  "background": {
+    "type": "image",
+    "src": "assets/background/paper.png",
+    "color": "#f7efe1",
+    "treatment": "raw",
+    "detail": 0,
+    "shade": 0,
+    "blur": 0,
+    "custom": true,
+    "autoFromCompare": ""
+  },
+  "character": {
+    "packId": "default",
+    "captionFontFamily": "Be Vietnam Pro",
+    "scale": 1,
+    "x": 30,
+    "y": 150,
+    "poseWarnings": {},
+    "poseSources": {},
+    "poses": {
+      "point-left": "assets/character/point-left.webm",
+      "point-right": "assets/character/point-right.webm",
+      "question": "assets/character/question.webm"
+    }
+  },
+  "lines": [
+    {
+      "id": "line-1",
+      "compareSetId": "compare-1",
+      "text": "Đây là ADN.",
+      "role": "A",
+      "pose": "point-left",
+      "focusSide": "right",
+      "highlight": "ADN",
+      "sfx": "mixkit-hard-pop-click.wav",
+      "start": 0.55,
+      "duration": 1.566,
+      "poseLocked": false,
+      "focusSideLocked": false,
+      "dirtyVoice": false
+    },
+    {
+      "id": "line-2",
+      "compareSetId": "compare-1",
+      "text": "Đây là gen.",
+      "role": "B",
+      "pose": "point-right",
+      "focusSide": "left",
+      "highlight": "gen",
+      "sfx": "mixkit-hard-pop-click.wav",
+      "start": 2.236,
+      "duration": 0.756,
+      "poseLocked": false,
+      "focusSideLocked": false,
+      "dirtyVoice": false
+    },
+    {
+      "id": "line-3",
+      "compareSetId": "compare-1",
+      "text": "Sự khác nhau là gì?",
+      "role": "question",
+      "pose": "question",
+      "focusSide": "center",
+      "highlight": "",
+      "sfx": "mixkit-bubble-pop.wav",
+      "start": 3.112,
+      "duration": 1.152,
+      "poseLocked": false,
+      "focusSideLocked": false,
+      "dirtyVoice": false
+    },
+    {
+      "id": "line-4",
+      "compareSetId": "compare-1",
+      "text": "ADN là phân tử mang thông tin di truyền của sinh vật. Nó giống như một cuốn sách hướng dẫn rất dài, chứa các thông tin giúp cơ thể hình thành, phát triển và hoạt động.",
+      "role": "A",
+      "pose": "point-left",
+      "focusSide": "right",
+      "highlight": "ADN",
+      "sfx": "mixkit-hard-pop-click.wav",
+      "start": 4.384,
+      "duration": 7.452,
+      "poseLocked": false,
+      "focusSideLocked": false,
+      "dirtyVoice": false
+    },
+    {
+      "id": "line-5",
+      "compareSetId": "compare-1",
+      "text": "Gen là một đoạn ADN có chức năng nhất định. Nó có thể mang thông tin liên quan đến việc tạo ra một loại protein hoặc ảnh hưởng đến một đặc điểm sinh học nào đó.",
+      "role": "B",
+      "pose": "point-right",
+      "focusSide": "left",
+      "highlight": "U Ác Tính",
+      "sfx": "mixkit-hard-pop-click.wav",
+      "start": 11.956,
+      "duration": 7.488,
+      "poseLocked": false,
+      "focusSideLocked": false,
+      "dirtyVoice": false
+    },
+    {
+      "id": "line-6",
+      "compareSetId": "compare-2",
+      "text": "Đây là hồng cầu.",
+      "role": "A",
+      "pose": "point-left",
+      "focusSide": "right",
+      "highlight": "hồng cầu",
+      "sfx": "mixkit-hard-pop-click.wav",
+      "start": 19.564,
+      "duration": 1.656,
+      "poseLocked": false,
+      "focusSideLocked": false,
+      "dirtyVoice": false
+    },
+    {
+      "id": "line-7",
+      "compareSetId": "compare-2",
+      "text": "Đây là bạch cầu.",
+      "role": "B",
+      "pose": "point-right",
+      "focusSide": "left",
+      "highlight": "bạch cầu",
+      "sfx": "mixkit-hard-pop-click.wav",
+      "start": 21.34,
+      "duration": 1.512,
+      "poseLocked": false,
+      "focusSideLocked": false,
+      "dirtyVoice": false
+    },
+    {
+      "id": "line-8",
+      "compareSetId": "compare-2",
+      "text": "Sự khác nhau là gì?",
+      "role": "question",
+      "pose": "question",
+      "focusSide": "center",
+      "highlight": "",
+      "sfx": "mixkit-bubble-pop.wav",
+      "start": 22.972,
+      "duration": 1.044,
+      "poseLocked": false,
+      "focusSideLocked": false,
+      "dirtyVoice": false
+    },
+    {
+      "id": "line-9",
+      "compareSetId": "compare-2",
+      "text": "Hồng cầu là tế bào máu có nhiệm vụ chính là vận chuyển oxy. Nhờ hồng cầu, oxy từ phổi được đưa đi khắp cơ thể để não, tim, cơ bắp và các cơ quan khác hoạt động. Có màu đỏ vì chứa huyết sắc tố, nên máu của chúng ta nhìn có màu đỏ.",
+      "role": "A",
+      "pose": "point-left",
+      "focusSide": "right",
+      "highlight": "hồng cầu",
+      "sfx": "mixkit-hard-pop-click.wav",
+      "start": 24.136,
+      "duration": 12.852,
+      "poseLocked": false,
+      "focusSideLocked": false,
+      "dirtyVoice": false
+    },
+    {
+      "id": "line-10",
+      "compareSetId": "compare-2",
+      "text": "Bạch cầu thì khác nó liên quan đến hệ miễn dịch. Nó giống như đội bảo vệ của cơ thể, giúp chống lại vi khuẩn, virus, ký sinh trùng hoặc những yếu tố lạ xâm nhập.",
+      "role": "B",
+      "pose": "point-right",
+      "focusSide": "left",
+      "highlight": "bạch cầu",
+      "sfx": "mixkit-hard-pop-click.wav",
+      "start": 37.108,
+      "duration": 8.136,
+      "poseLocked": false,
+      "focusSideLocked": false,
+      "dirtyVoice": false
+    }
+  ],
+  "contentDraft": {
+    "text": "Đây là ADN.\nĐây là gen.\nSự khác nhau là gì?\nADN là phân tử mang thông tin di truyền của sinh vật. Nó giống như một cuốn sách hướng dẫn rất dài, chứa các thông tin giúp cơ thể hình thành, phát triển và hoạt động.\nGen là một đoạn ADN có chức năng nhất định. Nó có thể mang thông tin liên quan đến việc tạo ra một loại protein hoặc ảnh hưởng đến một đặc điểm sinh học nào đó.\nĐây là hồng cầu.\nĐây là bạch cầu.\nSự khác nhau là gì?\nHồng cầu là tế bào máu có nhiệm vụ chính là vận chuyển oxy. Nhờ hồng cầu, oxy từ phổi được đưa đi khắp cơ thể để não, tim, cơ bắp và các cơ quan khác hoạt động. Có màu đỏ vì chứa huyết sắc tố, nên máu của chúng ta nhìn có màu đỏ.\nBạch cầu thì khác nó liên quan đến hệ miễn dịch. Nó giống như đội bảo vệ của cơ thể, giúp chống lại vi khuẩn, virus, ký sinh trùng hoặc những yếu tố lạ xâm nhập.",
+    "sections": {
+      "compare-1": "Đây là ADN.\nĐây là gen.\nSự khác nhau là gì?\nADN là phân tử mang thông tin di truyền của sinh vật. Nó giống như một cuốn sách hướng dẫn rất dài, chứa các thông tin giúp cơ thể hình thành, phát triển và hoạt động.\nGen là một đoạn ADN có chức năng nhất định. Nó có thể mang thông tin liên quan đến việc tạo ra một loại protein hoặc ảnh hưởng đến một đặc điểm sinh học nào đó.",
+      "compare-2": "Đây là hồng cầu.\nĐây là bạch cầu.\nSự khác nhau là gì?\nHồng cầu là tế bào máu có nhiệm vụ chính là vận chuyển oxy. Nhờ hồng cầu, oxy từ phổi được đưa đi khắp cơ thể để não, tim, cơ bắp và các cơ quan khác hoạt động. Có màu đỏ vì chứa huyết sắc tố, nên máu của chúng ta nhìn có màu đỏ.\nBạch cầu thì khác nó liên quan đến hệ miễn dịch. Nó giống như đội bảo vệ của cơ thể, giúp chống lại vi khuẩn, virus, ký sinh trùng hoặc những yếu tố lạ xâm nhập."
+    },
+    "updatedAt": "2026-08-02T08:55:05.271Z",
+    "hash": "f358cdb9c49aad5c"
+  },
+  "contentOfficial": {
+    "revision": 1,
+    "savedAt": "2026-08-02T08:55:05.271Z",
+    "lineCount": 10,
+    "hash": "f358cdb9c49aad5c"
+  },
+  "audio": {
+    "provider": "aimax",
+    "alignmentProvider": "none",
+    "voiceId": "uv_0c793269",
+    "speed": 1,
+    "pitch": 0,
+    "voiceVolume": 1,
+    "mainAudio": "",
+    "srt": "assets/vo/audio.srt",
+    "bgm": "",
+    "bgmVolume": 0.18,
+    "sceneStartSfx": {
+      "enabled": true,
+      "skipFirst": true,
+      "mode": "pose",
+      "name": "mixkit-hard-pop-click.wav",
+      "volume": 0.3,
+      "poseVolumes": {
+        "point-left": 0.3,
+        "point-right": 0.3,
+        "question": 0.3
+      },
+      "offsetMs": 0
+    }
+  },
+  "poseSfx": {
+    "point-left": "capcut-cache/75.mp3",
+    "point-right": "capcut-cache/75.mp3",
+    "question": "capcut-cache/45.mp3"
+  },
+  "caption": {
+    "style": "capcut-karaoke",
+    "animation": "word-color",
+    "fontFamily": "Be Vietnam Pro",
+    "fontSize": 44,
+    "normalColor": "#ffffff",
+    "hotColor": "#ffe600",
+    "strokeColor": "#000000",
+    "strokeWidth": 12,
+    "wordGap": 8,
+    "uppercase": false,
+    "shadowPreset": "capcut-heavy",
+    "presetId": "custom"
+  },
+  "render": {
+    "engine": "remotion",
+    "width": 1080,
+    "height": 1920,
+    "fps": 30,
+    "preferredMode": "gpu"
+  },
+  "layout": {
+    "width": 1080,
+    "height": 1920,
+    "compareTop": 170,
+    "compareHeight": 520,
+    "photoCompareSize": 500,
+    "photoCompareOffsetY": 130,
+    "compareLabelPlacement": "auto",
+    "compareLabelUppercase": false,
+    "compareLabelBoxEnabled": true,
+    "compareLabelAlign": "center",
+    "compareLabelFontSize": 0,
+    "compareLabelHeight": 110,
+    "compareLabelPaddingX": 18,
+    "compareLabelPaddingY": 10,
+    "compareLabelColor": "#20160f",
+    "compareLabelBackground": "#fffdf8",
+    "compareLabelBackgroundOpacity": 0,
+    "compareLabelBorderColor": "#20160f",
+    "compareLabelBorderWidth": 0,
+    "compareLabelRadius": 0,
+    "compareLabelShadow": "none",
+    "compareVsColor": "#c85a46",
+    "compareVsTextColor": "#fffdf8",
+    "compareVsBorderColor": "#3a3836",
+    "photoFrameBorderColor": "#20160f",
+    "photoFrameShadowColor": "#20160f",
+    "photoLabelColor": "#20160f",
+    "focusScaleLarge": 1.18,
+    "focusScaleSmall": 0.82,
+    "focusMotionDuration": 0.5,
+    "focusImageBlur": 2.5,
+    "focusImageDarkness": 0.35,
+    "captionY": 850,
+    "captionYExplicit": true,
+    "characterY": 1180,
+    "characterHeight": 650
+  },
+  "pipeline": {
+    "dirty": {
+      "content": false,
+      "audio": false,
+      "assets": false,
+      "style": false,
+      "layout": false,
+      "render": true
+    },
+    "dirtyReasons": [
+      "render"
+    ],
+    "officialSnapshot": {
+      "propsHash": "8cd7cd0c479d",
+      "assetManifestHash": "f9c4bc5dd3ade3684159f99bd9e5718b04f52107bcdab59edf27bc9ad3d1d6aa",
+      "createdAt": "2026-08-08T03:31:48.736Z"
+    }
+  },
+  "leftLabel": "U Lành Tính",
+  "rightLabel": "U Ác Tính",
+  "audioDuration": 46.044,
+  "subtitleSource": "srt",
+  "leftImage": "assets/illustrations/compare-1-left.png",
+  "assetRevision": "msdh4jhg-0550ba45",
+  "rightImage": "assets/illustrations/compare-1-right.png"
+}

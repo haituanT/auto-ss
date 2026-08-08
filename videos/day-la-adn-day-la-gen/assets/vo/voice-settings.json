@@ -1,0 +1,11 @@
+{
+  "version": 1,
+  "provider": "aimax",
+  "model": "",
+  "voiceId": "uv_0c793269",
+  "speed": 1,
+  "textHash": "4e588b146f786724ab42802e0075fdb0d75f2ea0984e823fed3a8ec704f1d282",
+  "lineCount": 10,
+  "source": "restored-from-public-remotion-job",
+  "generatedAt": "2026-08-02T08:55:05.271Z"
+}

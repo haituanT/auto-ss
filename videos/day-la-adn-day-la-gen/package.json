@@ -1,0 +1,11 @@
+{
+  "name": "day-la-adn-day-la-gen",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "generate-vo": "node scripts/generate-vo.mjs",
+    "sync-channel": "node scripts/sync-channel.mjs",
+    "check": "node ../../scripts/remotion-render-video.mjs --check",
+    "render": "node ../../scripts/remotion-render-video.mjs"
+  }
+}

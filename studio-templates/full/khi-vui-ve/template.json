@@ -1,0 +1,265 @@
+{
+  "version": 10,
+  "id": "khi-vui-ve",
+  "type": "full",
+  "name": "khỉ vui vẻ",
+  "description": "",
+  "createdAt": "2026-07-31T16:15:08.128Z",
+  "updatedAt": "2026-08-07T15:20:25.886Z",
+  "sourceSlug": "can-thj",
+  "parts": {
+    "caption": true,
+    "character": true,
+    "audio": true,
+    "layout": true,
+    "background": true,
+    "render": true,
+    "content": false
+  },
+  "config": {
+    "caption": {
+      "style": "capcut-karaoke",
+      "animation": "word-color",
+      "fontFamily": "Be Vietnam Pro",
+      "fontSize": 44,
+      "normalColor": "#ffffff",
+      "hotColor": "#ffe600",
+      "strokeColor": "#000000",
+      "strokeWidth": 12,
+      "wordGap": 8,
+      "uppercase": false,
+      "shadowPreset": "capcut-heavy"
+    },
+    "layout": {
+      "captionY": 850,
+      "captionYExplicit": true,
+      "width": 1080,
+      "height": 1920,
+      "compareTop": 170,
+      "compareHeight": 520,
+      "photoCompareSize": 500,
+      "photoCompareOffsetY": 130,
+      "compareLabelUppercase": false,
+      "compareVsColor": "#c85a46",
+      "compareVsTextColor": "#fffdf8",
+      "compareVsBorderColor": "#3a3836",
+      "photoFrameBorderColor": "#20160f",
+      "photoFrameShadowColor": "#20160f",
+      "photoLabelColor": "#20160f",
+      "focusScaleLarge": 1.18,
+      "focusScaleSmall": 0.82,
+      "focusMotionDuration": 0.5,
+      "focusImageBlur": 2.5,
+      "focusImageDarkness": 0.35,
+      "characterY": 1180,
+      "characterHeight": 650
+    },
+    "character": {
+      "packId": "default",
+      "captionFontFamily": "Be Vietnam Pro",
+      "scale": 1,
+      "x": 30,
+      "y": 150,
+      "poses": {
+        "point-left": "assets/character/point-left.webm",
+        "point-right": "assets/character/point-right.webm",
+        "question": "assets/character/question.webm"
+      },
+      "poseSources": {
+        "point-left": {
+          "preview": "assets/character/point-left.webm",
+          "render": "assets/character/point-left.webm",
+          "state": "ready"
+        },
+        "point-right": {
+          "preview": "assets/character/point-right.webm",
+          "render": "assets/character/point-right.webm",
+          "state": "ready"
+        },
+        "question": {
+          "preview": "assets/character/question.webm",
+          "render": "assets/character/question.webm",
+          "state": "ready"
+        }
+      }
+    },
+    "audio": {
+      "provider": "aimax",
+      "voiceId": "uv_0c793269",
+      "speed": 1,
+      "pitch": 1,
+      "voiceVolume": 1,
+      "bgm": "",
+      "bgmVolume": 0.18,
+      "sceneStartSfx": {
+        "enabled": true,
+        "skipFirst": true,
+        "mode": "pose",
+        "name": "assets/audio/sfx/mixkit-hard-pop-click.wav",
+        "volume": 0.3,
+        "poseVolumes": {
+          "point-left": 0.3,
+          "point-right": 0.3,
+          "question": 0.3
+        },
+        "offsetMs": 0
+      }
+    },
+    "poseSfx": {
+      "point-left": "assets/audio/sfx/75.mp3",
+      "point-right": "assets/audio/sfx/75.mp3",
+      "question": "assets/audio/sfx/45.mp3"
+    },
+    "template": {
+      "id": "photo-compare-v1",
+      "name": "Ảnh xếp theo bố cục",
+      "version": 1
+    },
+    "poseStartSide": "right",
+    "background": {
+      "type": "image",
+      "src": "assets/background/paper.png",
+      "color": "#f7efe1",
+      "treatment": "raw",
+      "detail": 0,
+      "shade": 0,
+      "blur": 0
+    },
+    "logo": {
+      "enabled": true,
+      "src": "assets/logo/logo.png",
+      "width": 240,
+      "anchor": "bottom-left",
+      "x": 32,
+      "y": -210,
+      "opacity": 0.9,
+      "layer": "above-character",
+      "backdrop": false
+    },
+    "render": {
+      "engine": "remotion",
+      "width": 1080,
+      "height": 1920,
+      "fps": 30,
+      "preferredMode": "gpu"
+    }
+  },
+  "assets": {
+    "character": {
+      "point-left": "assets/character/point-left.webm",
+      "point-right": "assets/character/point-right.webm",
+      "question": "assets/character/question.webm"
+    },
+    "audio/sfx": {
+      "45": "assets/audio/sfx/45.mp3",
+      "75": "assets/audio/sfx/75.mp3",
+      "mixkit-hard-pop-click": "assets/audio/sfx/mixkit-hard-pop-click.wav"
+    },
+    "background": {
+      "paper": "assets/background/paper.png"
+    },
+    "logo": {
+      "logo": "assets/logo/logo.png"
+    }
+  },
+  "scopeVersion": 2,
+  "changelog": [
+    {
+      "version": 9,
+      "updatedAt": "2026-08-07T13:52:25.634Z",
+      "sourceSlug": "7-8",
+      "migration": "template-scope-v2",
+      "diffs": [
+        {
+          "key": "compare.leftLabel",
+          "label": "Strip compare.leftLabel"
+        },
+        {
+          "key": "compare.rightLabel",
+          "label": "Strip compare.rightLabel"
+        },
+        {
+          "key": "compare.leftZoom",
+          "label": "Strip compare.leftZoom"
+        },
+        {
+          "key": "compare.rightZoom",
+          "label": "Strip compare.rightZoom"
+        },
+        {
+          "key": "compare.leftCrop",
+          "label": "Strip compare.leftCrop"
+        },
+        {
+          "key": "compare.rightCrop",
+          "label": "Strip compare.rightCrop"
+        },
+        {
+          "key": "compareSets",
+          "label": "Strip compareSets"
+        }
+      ]
+    },
+    {
+      "version": 9,
+      "updatedAt": "2026-08-07T13:53:03.786Z",
+      "sourceSlug": "7-8",
+      "migration": "template-scope-v2",
+      "diffs": [
+        {
+          "key": "legacy non-whitelisted template config",
+          "label": "Strip legacy non-whitelisted template config"
+        }
+      ]
+    },
+    {
+      "version": 10,
+      "updatedAt": "2026-08-07T15:20:25.886Z",
+      "sourceSlug": "can-thj",
+      "diffs": [
+        {
+          "part": "audio",
+          "key": "audio.pitch",
+          "label": "Cao độ giọng",
+          "before": "1",
+          "after": "0"
+        },
+        {
+          "part": "character",
+          "key": "character.poseSources.point-left.render.bytes",
+          "label": "character poseSources point-left render bytes",
+          "before": "1237077",
+          "after": "245010"
+        },
+        {
+          "part": "character",
+          "key": "character.poseSources.point-left.render.sha256",
+          "label": "character poseSources point-left render sha256",
+          "before": "a8c83674f2db2317dc756ccdcd95e7397eb23d2e0f7a89e043ff185392a070d7",
+          "after": "5fa912e0b2904db0940dcfdf0fbdebe93a5a1e675b88d511f647717bdef87163"
+        },
+        {
+          "part": "character",
+          "key": "character.poseSources.point-right.render.bytes",
+          "label": "character poseSources point-right render bytes",
+          "before": "1301912",
+          "after": "266397"
+        },
+        {
+          "part": "character",
+          "key": "character.poseSources.point-right.render.sha256",
+          "label": "character poseSources point-right render sha256",
+          "before": "69f0142e0fecee779f13894238efb0608c075cd6148391b966aa60beb24c8004",
+          "after": "9d15585a1ee2792e7d5592e84ad663e1ade1d9ba9e26112f6fc02f0bac920ef3"
+        },
+        {
+          "part": "layout",
+          "key": "poseStartSide",
+          "label": "Bắt đầu chỉ bên",
+          "before": "right",
+          "after": "left"
+        }
+      ]
+    }
+  ]
+}

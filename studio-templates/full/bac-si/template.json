@@ -1,0 +1,196 @@
+{
+  "version": 5,
+  "id": "bac-si",
+  "type": "full",
+  "name": "bác sĩ",
+  "description": "",
+  "createdAt": "2026-08-07T03:50:41.495Z",
+  "updatedAt": "2026-08-07T13:53:03.629Z",
+  "sourceSlug": "7-8-39",
+  "parts": {
+    "caption": true,
+    "character": true,
+    "audio": true,
+    "layout": true,
+    "background": true,
+    "render": true,
+    "content": false
+  },
+  "config": {
+    "caption": {
+      "style": "capcut-karaoke",
+      "animation": "word-color",
+      "fontFamily": "Be Vietnam Pro",
+      "fontSize": 46,
+      "normalColor": "#ffffff",
+      "hotColor": "#fff700",
+      "strokeColor": "#000000",
+      "strokeWidth": 12,
+      "wordGap": 9,
+      "uppercase": false,
+      "shadowPreset": "capcut-heavy"
+    },
+    "layout": {
+      "captionY": 790,
+      "captionYExplicit": true,
+      "width": 1080,
+      "height": 1920,
+      "compareTop": 170,
+      "compareHeight": 520,
+      "dualCompareSize": 410,
+      "dualCompareOffsetY": 0,
+      "photoCompareSize": 490,
+      "photoCompareOffsetY": 90,
+      "compareLabelUppercase": false,
+      "compareVsColor": "#ff4f2f",
+      "compareVsTextColor": "#fffdf8",
+      "compareVsBorderColor": "#20160f",
+      "photoFrameBorderColor": "#20160f",
+      "photoFrameShadowColor": "#20160f",
+      "photoLabelColor": "#20160f",
+      "focusScaleLarge": 1.18,
+      "focusScaleSmall": 0.82,
+      "focusMotionDuration": 0.5,
+      "focusImageBlur": 2,
+      "focusImageDarkness": 0.6,
+      "characterY": 1180,
+      "characterHeight": 650
+    },
+    "character": {
+      "packId": "default",
+      "captionFontFamily": "Be Vietnam Pro",
+      "scale": 1.55,
+      "x": 0,
+      "y": -20,
+      "poses": {
+        "point-left": "assets/character/point-left.png",
+        "point-right": "assets/character/point-right.png",
+        "question": "assets/character/question.png"
+      },
+      "poseSources": {
+        "point-left": {
+          "preview": "assets/character/point-left.png",
+          "render": "assets/character/point-left.png",
+          "state": "ready"
+        },
+        "point-right": {
+          "preview": "assets/character/point-right.png",
+          "render": "assets/character/point-right.png",
+          "state": "ready"
+        },
+        "question": {
+          "preview": "assets/character/question.png",
+          "render": "assets/character/question.png",
+          "state": "ready"
+        }
+      }
+    },
+    "audio": {
+      "provider": "aimax",
+      "voiceId": "uv_0c793269",
+      "speed": 1.05,
+      "pitch": 0,
+      "voiceVolume": 1,
+      "bgm": "",
+      "bgmVolume": 0.18,
+      "sceneStartSfx": {
+        "enabled": true,
+        "skipFirst": true,
+        "mode": "pose",
+        "name": "assets/audio/sfx/mixkit-hard-pop-click.wav",
+        "volume": 0.3,
+        "poseVolumes": {
+          "point-left": 0.3,
+          "point-right": 0.3,
+          "question": 0.3
+        },
+        "offsetMs": 0
+      }
+    },
+    "poseSfx": {
+      "point-left": "assets/audio/sfx/69.mp3",
+      "point-right": "assets/audio/sfx/69.mp3",
+      "question": "assets/audio/sfx/87.mp3"
+    },
+    "template": {
+      "id": "photo-clean-frame-v1",
+      "name": "Ảnh khung trơn",
+      "version": 1
+    },
+    "poseStartSide": "right",
+    "background": {
+      "type": "color",
+      "src": "",
+      "color": "#ffffff",
+      "treatment": "raw",
+      "detail": 0,
+      "shade": 0,
+      "blur": 0
+    },
+    "logo": {
+      "enabled": false,
+      "src": "",
+      "width": 110,
+      "anchor": "bottom-left",
+      "x": 32,
+      "y": -72,
+      "opacity": 0.9,
+      "layer": "above-character",
+      "backdrop": false
+    },
+    "render": {
+      "engine": "remotion",
+      "width": 1080,
+      "height": 1920,
+      "fps": 30,
+      "preferredMode": "gpu"
+    }
+  },
+  "assets": {
+    "character": {
+      "point-left": "assets/character/point-left.png",
+      "point-right": "assets/character/point-right.png",
+      "question": "assets/character/question.png"
+    },
+    "audio/sfx": {
+      "69": "assets/audio/sfx/69.mp3",
+      "87": "assets/audio/sfx/87.mp3",
+      "mixkit-hard-pop-click": "assets/audio/sfx/mixkit-hard-pop-click.wav"
+    }
+  },
+  "scopeVersion": 2,
+  "changelog": [
+    {
+      "version": 5,
+      "updatedAt": "2026-08-07T13:52:25.614Z",
+      "sourceSlug": "7-8-39",
+      "migration": "template-scope-v2",
+      "diffs": [
+        {
+          "key": "compare.leftLabel",
+          "label": "Strip compare.leftLabel"
+        },
+        {
+          "key": "compare.rightLabel",
+          "label": "Strip compare.rightLabel"
+        },
+        {
+          "key": "compareSets",
+          "label": "Strip compareSets"
+        }
+      ]
+    },
+    {
+      "version": 5,
+      "updatedAt": "2026-08-07T13:53:03.629Z",
+      "sourceSlug": "7-8-39",
+      "migration": "template-scope-v2",
+      "diffs": [
+        {
+          "key": "legacy non-whitelisted template config",
+          "label": "Strip legacy non-whitelisted template config"
+        }
+      ]
+    }
+  ]
+}

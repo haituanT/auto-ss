@@ -1,0 +1,42 @@
+{
+  "name": "auto-compare-video-studio",
+  "version": "0.1.44",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "app": "node app/electron/start-app.cjs",
+    "studio": "node studio/dev.mjs",
+    "studio:backend": "node studio/backend/server.mjs",
+    "studio:frontend": "vite --config studio/frontend/vite.config.js",
+    "remotion:studio": "remotion studio remotion/src/index.jsx",
+    "remotion:render": "remotion render remotion/src/index.jsx AutoCompare",
+    "remotion:render-video": "node scripts/remotion-render-video.mjs",
+    "build:studio": "vite build --config studio/frontend/vite.config.js",
+    "test:studio": "node --test --test-concurrency=1 studio/backend/tests/*.test.mjs",
+    "test:aimax-tts": "node --test scripts/tests/*.test.mjs",
+    "migrate:template-scope": "node scripts/migrate-template-scope.mjs",
+    "test": "npm run test:studio && npm run test:aimax-tts",
+    "qa:studio-ui": "node scripts/studio-ui-smoke.mjs",
+    "qa:studio": "npm run build:studio && npm test && npm run qa:studio-ui"
+  },
+  "dependencies": {
+    "@remotion/captions": "4.0.499",
+    "@remotion/cli": "4.0.499",
+    "@remotion/media": "4.0.499",
+    "@remotion/player": "4.0.499",
+    "@remotion/renderer": "4.0.499",
+    "@vitejs/plugin-react": "^5.0.0",
+    "express": "^5.1.0",
+    "lucide-react": "^0.475.0",
+    "multer": "^2.2.0",
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0",
+    "remotion": "4.0.499",
+    "sharp": "^0.35.3",
+    "vite": "^7.0.0"
+  },
+  "devDependencies": {
+    "electron": "^43.2.0",
+    "playwright": "^1.62.0"
+  }
+}

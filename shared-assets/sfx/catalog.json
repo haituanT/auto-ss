@@ -1,0 +1,1850 @@
+{
+  "version": 1,
+  "sounds": {
+    "kenney/click_001.ogg": {
+      "label": "Kenney - Click mềm 1",
+      "category": "Pose & cử chỉ",
+      "description": "Nhấn nhẹ cho thao tác chỉ trái hoặc chỉ phải.",
+      "source": "Kenney Interface Sounds",
+      "sourceUrl": "https://kenney.nl/assets/interface-sounds",
+      "license": "CC0",
+      "order": 110
+    },
+    "kenney/click_002.ogg": {
+      "label": "Kenney - Click mềm 2",
+      "category": "Pose & cử chỉ",
+      "description": "Nhấn gọn cho thao tác chỉ trái hoặc chỉ phải.",
+      "source": "Kenney Interface Sounds",
+      "sourceUrl": "https://kenney.nl/assets/interface-sounds",
+      "license": "CC0",
+      "order": 120
+    },
+    "kenney/click_003.ogg": {
+      "label": "Kenney - Click sáng",
+      "category": "Pose & cử chỉ",
+      "description": "Nhấn sáng, ngắn và rõ.",
+      "source": "Kenney Interface Sounds",
+      "sourceUrl": "https://kenney.nl/assets/interface-sounds",
+      "license": "CC0",
+      "order": 130
+    },
+    "kenney/click_004.ogg": {
+      "label": "Kenney - Click chắc",
+      "category": "Pose & cử chỉ",
+      "description": "Nhấn rõ cho câu so sánh.",
+      "source": "Kenney Interface Sounds",
+      "sourceUrl": "https://kenney.nl/assets/interface-sounds",
+      "license": "CC0",
+      "order": 140
+    },
+    "kenney/click_005.ogg": {
+      "label": "Kenney - Click nhanh",
+      "category": "Pose & cử chỉ",
+      "description": "Nhấn nhanh cho câu ngắn.",
+      "source": "Kenney Interface Sounds",
+      "sourceUrl": "https://kenney.nl/assets/interface-sounds",
+      "license": "CC0",
+      "order": 150
+    },
+    "kenney/confirmation_001.ogg": {
+      "label": "Kenney - Xác nhận 1",
+      "category": "Phản hồi nhanh",
+      "description": "Chốt ý tích cực.",
+      "source": "Kenney Interface Sounds",
+      "sourceUrl": "https://kenney.nl/assets/interface-sounds",
+      "license": "CC0",
+      "order": 110
+    },
+    "kenney/confirmation_002.ogg": {
+      "label": "Kenney - Xác nhận 2",
+      "category": "Phản hồi nhanh",
+      "description": "Đúng hoặc kết luận ngắn.",
+      "source": "Kenney Interface Sounds",
+      "sourceUrl": "https://kenney.nl/assets/interface-sounds",
+      "license": "CC0",
+      "order": 120
+    },
+    "kenney/confirmation_003.ogg": {
+      "label": "Kenney - Hoàn tất",
+      "category": "Phản hồi nhanh",
+      "description": "Xác nhận câu chốt.",
+      "source": "Kenney Interface Sounds",
+      "sourceUrl": "https://kenney.nl/assets/interface-sounds",
+      "license": "CC0",
+      "order": 130
+    },
+    "kenney/confirmation_004.ogg": {
+      "label": "Kenney - Đồng ý",
+      "category": "Phản hồi nhanh",
+      "description": "Phản hồi đồng thuận nhẹ.",
+      "source": "Kenney Interface Sounds",
+      "sourceUrl": "https://kenney.nl/assets/interface-sounds",
+      "license": "CC0",
+      "order": 140
+    },
+    "kenney/error_001.ogg": {
+      "label": "Kenney - Sai nhẹ",
+      "category": "Phản hồi nhanh",
+      "description": "Báo sai hoặc đính chính nhẹ.",
+      "source": "Kenney Interface Sounds",
+      "sourceUrl": "https://kenney.nl/assets/interface-sounds",
+      "license": "CC0",
+      "order": 210
+    },
+    "kenney/error_002.ogg": {
+      "label": "Kenney - Cảnh báo 1",
+      "category": "Phản hồi nhanh",
+      "description": "Cảnh báo ngắn.",
+      "source": "Kenney Interface Sounds",
+      "sourceUrl": "https://kenney.nl/assets/interface-sounds",
+      "license": "CC0",
+      "order": 220
+    },
+    "kenney/error_003.ogg": {
+      "label": "Kenney - Cảnh báo 2",
+      "category": "Phản hồi nhanh",
+      "description": "Đáp án không đúng.",
+      "source": "Kenney Interface Sounds",
+      "sourceUrl": "https://kenney.nl/assets/interface-sounds",
+      "license": "CC0",
+      "order": 230
+    },
+    "kenney/error_004.ogg": {
+      "label": "Kenney - Lỗi gọn",
+      "category": "Phản hồi nhanh",
+      "description": "Nhấn lỗi nhanh.",
+      "source": "Kenney Interface Sounds",
+      "sourceUrl": "https://kenney.nl/assets/interface-sounds",
+      "license": "CC0",
+      "order": 240
+    },
+    "kenney/error_005.ogg": {
+      "label": "Kenney - Sai rõ",
+      "category": "Phản hồi nhanh",
+      "description": "Nhấn mạnh câu phủ định.",
+      "source": "Kenney Interface Sounds",
+      "sourceUrl": "https://kenney.nl/assets/interface-sounds",
+      "license": "CC0",
+      "order": 250
+    },
+    "kenney/error_006.ogg": {
+      "label": "Kenney - Cảnh báo sắc",
+      "category": "Phản hồi nhanh",
+      "description": "Cảnh báo rõ hơn.",
+      "source": "Kenney Interface Sounds",
+      "sourceUrl": "https://kenney.nl/assets/interface-sounds",
+      "license": "CC0",
+      "order": 260
+    },
+    "kenney/glitch_001.ogg": {
+      "label": "Kenney - Glitch 1",
+      "category": "Chuyển cảnh & build-up",
+      "description": "Glitch ngắn cho đổi ý.",
+      "source": "Kenney Interface Sounds",
+      "sourceUrl": "https://kenney.nl/assets/interface-sounds",
+      "license": "CC0",
+      "order": 110
+    },
+    "kenney/glitch_002.ogg": {
+      "label": "Kenney - Glitch 2",
+      "category": "Chuyển cảnh & build-up",
+      "description": "Glitch gọn cho chủ đề tech.",
+      "source": "Kenney Interface Sounds",
+      "sourceUrl": "https://kenney.nl/assets/interface-sounds",
+      "license": "CC0",
+      "order": 120
+    },
+    "kenney/glitch_003.ogg": {
+      "label": "Kenney - Glitch 3",
+      "category": "Chuyển cảnh & build-up",
+      "description": "Chuyển nhịp có điểm nhấn.",
+      "source": "Kenney Interface Sounds",
+      "sourceUrl": "https://kenney.nl/assets/interface-sounds",
+      "license": "CC0",
+      "order": 130
+    },
+    "kenney/glitch_004.ogg": {
+      "label": "Kenney - Glitch 4",
+      "category": "Chuyển cảnh & build-up",
+      "description": "Hiệu ứng lỗi ngắn.",
+      "source": "Kenney Interface Sounds",
+      "sourceUrl": "https://kenney.nl/assets/interface-sounds",
+      "license": "CC0",
+      "order": 140
+    },
+    "kenney/open_001.ogg": {
+      "label": "Kenney - Mở ý 1",
+      "category": "Chuyển cảnh & build-up",
+      "description": "Mở một ý hoặc phân đoạn mới.",
+      "source": "Kenney Interface Sounds",
+      "sourceUrl": "https://kenney.nl/assets/interface-sounds",
+      "license": "CC0",
+      "order": 210
+    },
+    "kenney/open_002.ogg": {
+      "label": "Kenney - Mở ý 2",
+      "category": "Chuyển cảnh & build-up",
+      "description": "Mở đầu nhẹ.",
+      "source": "Kenney Interface Sounds",
+      "sourceUrl": "https://kenney.nl/assets/interface-sounds",
+      "license": "CC0",
+      "order": 220
+    },
+    "kenney/open_003.ogg": {
+      "label": "Kenney - Reveal",
+      "category": "Chuyển cảnh & build-up",
+      "description": "Bật ra cho nội dung mới.",
+      "source": "Kenney Interface Sounds",
+      "sourceUrl": "https://kenney.nl/assets/interface-sounds",
+      "license": "CC0",
+      "order": 230
+    },
+    "kenney/open_004.ogg": {
+      "label": "Kenney - Mở ý 3",
+      "category": "Chuyển cảnh & build-up",
+      "description": "Mở ý ngắn, không lấn voice.",
+      "source": "Kenney Interface Sounds",
+      "sourceUrl": "https://kenney.nl/assets/interface-sounds",
+      "license": "CC0",
+      "order": 240
+    },
+    "kenney/question_001.ogg": {
+      "label": "Kenney - Câu hỏi 1",
+      "category": "Meme & nhấn mạnh",
+      "description": "Dùng cho dòng đặt câu hỏi.",
+      "source": "Kenney Interface Sounds",
+      "sourceUrl": "https://kenney.nl/assets/interface-sounds",
+      "license": "CC0",
+      "order": 110
+    },
+    "kenney/question_002.ogg": {
+      "label": "Kenney - Câu hỏi 2",
+      "category": "Meme & nhấn mạnh",
+      "description": "Nhấn câu hỏi nhẹ.",
+      "source": "Kenney Interface Sounds",
+      "sourceUrl": "https://kenney.nl/assets/interface-sounds",
+      "license": "CC0",
+      "order": 120
+    },
+    "kenney/question_003.ogg": {
+      "label": "Kenney - Câu hỏi 3",
+      "category": "Meme & nhấn mạnh",
+      "description": "Tạo khoảng nhấn trước đáp án.",
+      "source": "Kenney Interface Sounds",
+      "sourceUrl": "https://kenney.nl/assets/interface-sounds",
+      "license": "CC0",
+      "order": 130
+    },
+    "kenney/question_004.ogg": {
+      "label": "Kenney - Câu hỏi 4",
+      "category": "Meme & nhấn mạnh",
+      "description": "Nhấn câu hỏi rõ hơn.",
+      "source": "Kenney Interface Sounds",
+      "sourceUrl": "https://kenney.nl/assets/interface-sounds",
+      "license": "CC0",
+      "order": 140
+    },
+    "kenney/select_001.ogg": {
+      "label": "Kenney - Chọn 1",
+      "category": "Pose & cử chỉ",
+      "description": "Chọn nội dung A hoặc B.",
+      "source": "Kenney Interface Sounds",
+      "sourceUrl": "https://kenney.nl/assets/interface-sounds",
+      "license": "CC0",
+      "order": 210
+    },
+    "kenney/select_002.ogg": {
+      "label": "Kenney - Chọn 2",
+      "category": "Pose & cử chỉ",
+      "description": "Điểm vào cho câu so sánh.",
+      "source": "Kenney Interface Sounds",
+      "sourceUrl": "https://kenney.nl/assets/interface-sounds",
+      "license": "CC0",
+      "order": 220
+    },
+    "kenney/select_003.ogg": {
+      "label": "Kenney - Chọn 3",
+      "category": "Pose & cử chỉ",
+      "description": "Nhấn lựa chọn ngắn.",
+      "source": "Kenney Interface Sounds",
+      "sourceUrl": "https://kenney.nl/assets/interface-sounds",
+      "license": "CC0",
+      "order": 230
+    },
+    "kenney/select_004.ogg": {
+      "label": "Kenney - Chọn 4",
+      "category": "Pose & cử chỉ",
+      "description": "Nhấn lựa chọn mềm.",
+      "source": "Kenney Interface Sounds",
+      "sourceUrl": "https://kenney.nl/assets/interface-sounds",
+      "license": "CC0",
+      "order": 240
+    },
+    "tiengdong/tiengdong-pop.mp3": {
+      "label": "Tiếng Động - Pop ngắn",
+      "category": "Tiếng Động - SFX edit",
+      "description": "Pop vui, ngắn để nhấn pose, hiện chữ hoặc chuyển ý nhẹ.",
+      "source": "Tiếng Động",
+      "sourceUrl": "https://tiengdong.com/pop-sound-effect",
+      "license": "free-use-unverified",
+      "order": 10
+    },
+    "tiengdong/tiengdong-ting.mp3": {
+      "label": "Tiếng Động - Ting",
+      "category": "Tiếng Động - SFX edit",
+      "description": "Ting sáng cho đáp án đúng, highlight hoặc text xuất hiện.",
+      "source": "Tiếng Động",
+      "sourceUrl": "https://tiengdong.com/tieng-ting-mp3",
+      "license": "free-use-unverified",
+      "order": 20
+    },
+    "tiengdong/tiengdong-balloon-pop.mp3": {
+      "label": "Tiếng Động - Bóng bay nổ",
+      "category": "Tiếng Động - SFX edit",
+      "description": "Pop mạnh cho bất ngờ, punchline hoặc đoạn so sánh cần nhấn.",
+      "source": "Tiếng Động",
+      "sourceUrl": "https://tiengdong.com/tieng-bong-bay-bong-hoi-no-to",
+      "license": "free-use-unverified",
+      "order": 30
+    },
+    "tiengdong/tiengdong-riser.mp3": {
+      "label": "Tiếng Động - Riser",
+      "category": "Tiếng Động - SFX edit",
+      "description": "Build-up ngắn cho reveal, cao trào hoặc chuyển cảnh căng hơn.",
+      "source": "Tiếng Động",
+      "sourceUrl": "https://tiengdong.com/riser-sound-effect",
+      "license": "free-use-unverified",
+      "order": 40
+    },
+    "tiengdong/tiengdong-beep-jvevermind.mp3": {
+      "label": "Tiếng Động - Beep JVevermind",
+      "category": "Tiếng Động - SFX edit",
+      "description": "Beep rất ngắn để che từ nhạy cảm hoặc tạo nhịp cảnh báo.",
+      "source": "Tiếng Động",
+      "sourceUrl": "https://tiengdong.com/tieng-beep-jvevermind",
+      "license": "free-use-unverified",
+      "order": 50
+    },
+    "tiengdong/tiengdong-huh.mp3": {
+      "label": "Tiếng Động - Huh",
+      "category": "Tiếng Động - SFX edit",
+      "description": "Meme phản ứng cho câu hỏi, nghi ngờ hoặc bất ngờ nhẹ.",
+      "source": "Tiếng Động",
+      "sourceUrl": "https://tiengdong.com/huh-sound-effect",
+      "license": "free-use-unverified",
+      "order": 60
+    },
+    "tiengdong/tiengdong-male-chuckle.mp3": {
+      "label": "Tiếng Động - Cười khúc khích nam",
+      "category": "Tiếng Động - SFX edit",
+      "description": "Tiếng cười tủm tỉm để tạo phản ứng meme hoặc đoạn hài.",
+      "source": "Tiếng Động",
+      "sourceUrl": "https://tiengdong.com/tieng-ngam-mieng-cuoi-khuc-khich-giong-nam",
+      "license": "free-use-unverified",
+      "order": 70
+    },
+    "tiengdong/tiengdong-message-short.mp3": {
+      "label": "Tiếng Động - Tin nhắn ngắn",
+      "category": "Tiếng Động - SFX edit",
+      "description": "Notification ngắn cho tick, chọn đáp án hoặc UI cue.",
+      "source": "Tiếng Động",
+      "sourceUrl": "https://tiengdong.com/nhac-chuong-tin-nhan-ngan",
+      "license": "free-use-unverified",
+      "order": 80
+    },
+    "0729-1.mp3": {
+      "label": "0729 1",
+      "category": "Tự tải lên",
+      "description": "Sound nhập vào thư viện cục bộ.",
+      "source": "Tiếng Động",
+      "sourceUrl": "https://tiengdong.com/",
+      "license": "unverified",
+      "order": 999
+    },
+    "capcut-cache/1.mp3": {
+      "label": "CapCut cache 001",
+      "category": "Tự tải lên",
+      "description": "Imported MP3 from CapCut cache; beat files were skipped and files were numbered in stable source-name order.",
+      "source": "CapCut cache",
+      "sourceUrl": "",
+      "license": "unverified",
+      "tags": [
+        "capcut",
+        "cache",
+        "imported",
+        "numbered"
+      ],
+      "order": 1
+    },
+    "capcut-cache/2.mp3": {
+      "label": "CapCut cache 002",
+      "category": "Tự tải lên",
+      "description": "Imported MP3 from CapCut cache; beat files were skipped and files were numbered in stable source-name order.",
+      "source": "CapCut cache",
+      "sourceUrl": "",
+      "license": "unverified",
+      "tags": [
+        "capcut",
+        "cache",
+        "imported",
+        "numbered"
+      ],
+      "order": 2
+    },
+    "capcut-cache/3.mp3": {
+      "label": "CapCut cache 003",
+      "category": "Tự tải lên",
+      "description": "Imported MP3 from CapCut cache; beat files were skipped and files were numbered in stable source-name order.",
+      "source": "CapCut cache",
+      "sourceUrl": "",
+      "license": "unverified",
+      "tags": [
+        "capcut",
+        "cache",
+        "imported",
+        "numbered"
+      ],
+      "order": 3
+    },
+    "capcut-cache/4.mp3": {
+      "label": "CapCut cache 004",
+      "category": "Tự tải lên",
+      "description": "Imported MP3 from CapCut cache; beat files were skipped and files were numbered in stable source-name order.",
+      "source": "CapCut cache",
+      "sourceUrl": "",
+      "license": "unverified",
+      "tags": [
+        "capcut",
+        "cache",
+        "imported",
+        "numbered"
+      ],
+      "order": 4
+    },
+    "capcut-cache/5.mp3": {
+      "label": "CapCut cache 005",
+      "category": "Tự tải lên",
+      "description": "Imported MP3 from CapCut cache; beat files were skipped and files were numbered in stable source-name order.",
+      "source": "CapCut cache",
+      "sourceUrl": "",
+      "license": "unverified",
+      "tags": [
+        "capcut",
+        "cache",
+        "imported",
+        "numbered"
+      ],
+      "order": 5
+    },
+    "capcut-cache/6.mp3": {
+      "label": "CapCut cache 006",
+      "category": "Tự tải lên",
+      "description": "Imported MP3 from CapCut cache; beat files were skipped and files were numbered in stable source-name order.",
+      "source": "CapCut cache",
+      "sourceUrl": "",
+      "license": "unverified",
+      "tags": [
+        "capcut",
+        "cache",
+        "imported",
+        "numbered"
+      ],
+      "order": 6
+    },
+    "capcut-cache/7.mp3": {
+      "label": "CapCut cache 007",
+      "category": "Tự tải lên",
+      "description": "Imported MP3 from CapCut cache; beat files were skipped and files were numbered in stable source-name order.",
+      "source": "CapCut cache",
+      "sourceUrl": "",
+      "license": "unverified",
+      "tags": [
+        "capcut",
+        "cache",
+        "imported",
+        "numbered"
+      ],
+      "order": 7
+    },
+    "capcut-cache/8.mp3": {
+      "label": "CapCut cache 008",
+      "category": "Tự tải lên",
+      "description": "Imported MP3 from CapCut cache; beat files were skipped and files were numbered in stable source-name order.",
+      "source": "CapCut cache",
+      "sourceUrl": "",
+      "license": "unverified",
+      "tags": [
+        "capcut",
+        "cache",
+        "imported",
+        "numbered"
+      ],
+      "order": 8
+    },
+    "capcut-cache/9.mp3": {
+      "label": "CapCut cache 009",
+      "category": "Tự tải lên",
+      "description": "Imported MP3 from CapCut cache; beat files were skipped and files were numbered in stable source-name order.",
+      "source": "CapCut cache",
+      "sourceUrl": "",
+      "license": "unverified",
+      "tags": [
+        "capcut",
+        "cache",
+        "imported",
+        "numbered"
+      ],
+      "order": 9
+    },
+    "capcut-cache/10.mp3": {
+      "label": "CapCut cache 010",
+      "category": "Tự tải lên",
+      "description": "Imported MP3 from CapCut cache; beat files were skipped and files were numbered in stable source-name order.",
+      "source": "CapCut cache",
+      "sourceUrl": "",
+      "license": "unverified",
+      "tags": [
+        "capcut",
+        "cache",
+        "imported",
+        "numbered"
+      ],
+      "order": 10
+    },
+    "capcut-cache/11.mp3": {
+      "label": "CapCut cache 011",
+      "category": "Tự tải lên",
+      "description": "Imported MP3 from CapCut cache; beat files were skipped and files were numbered in stable source-name order.",
+      "source": "CapCut cache",
+      "sourceUrl": "",
+      "license": "unverified",
+      "tags": [
+        "capcut",
+        "cache",
+        "imported",
+        "numbered"
+      ],
+      "order": 11
+    },
+    "capcut-cache/12.mp3": {
+      "label": "CapCut cache 012",
+      "category": "Tự tải lên",
+      "description": "Imported MP3 from CapCut cache; beat files were skipped and files were numbered in stable source-name order.",
+      "source": "CapCut cache",
+      "sourceUrl": "",
+      "license": "unverified",
+      "tags": [
+        "capcut",
+        "cache",
+        "imported",
+        "numbered"
+      ],
+      "order": 12
+    },
+    "capcut-cache/13.mp3": {
+      "label": "CapCut cache 013",
+      "category": "Tự tải lên",
+      "description": "Imported MP3 from CapCut cache; beat files were skipped and files were numbered in stable source-name order.",
+      "source": "CapCut cache",
+      "sourceUrl": "",
+      "license": "unverified",
+      "tags": [
+        "capcut",
+        "cache",
+        "imported",
+        "numbered"
+      ],
+      "order": 13
+    },
+    "capcut-cache/14.mp3": {
+      "label": "CapCut cache 014",
+      "category": "Tự tải lên",
+      "description": "Imported MP3 from CapCut cache; beat files were skipped and files were numbered in stable source-name order.",
+      "source": "CapCut cache",
+      "sourceUrl": "",
+      "license": "unverified",
+      "tags": [
+        "capcut",
+        "cache",
+        "imported",
+        "numbered"
+      ],
+      "order": 14
+    },
+    "capcut-cache/15.mp3": {
+      "label": "CapCut cache 015",
+      "category": "Tự tải lên",
+      "description": "Imported MP3 from CapCut cache; beat files were skipped and files were numbered in stable source-name order.",
+      "source": "CapCut cache",
+      "sourceUrl": "",
+      "license": "unverified",
+      "tags": [
+        "capcut",
+        "cache",
+        "imported",
+        "numbered"
+      ],
+      "order": 15
+    },
+    "capcut-cache/16.mp3": {
+      "label": "CapCut cache 016",
+      "category": "Tự tải lên",
+      "description": "Imported MP3 from CapCut cache; beat files were skipped and files were numbered in stable source-name order.",
+      "source": "CapCut cache",
+      "sourceUrl": "",
+      "license": "unverified",
+      "tags": [
+        "capcut",
+        "cache",
+        "imported",
+        "numbered"
+      ],
+      "order": 16
+    },
+    "capcut-cache/17.mp3": {
+      "label": "CapCut cache 017",
+      "category": "Tự tải lên",
+      "description": "Imported MP3 from CapCut cache; beat files were skipped and files were numbered in stable source-name order.",
+      "source": "CapCut cache",
+      "sourceUrl": "",
+      "license": "unverified",
+      "tags": [
+        "capcut",
+        "cache",
+        "imported",
+        "numbered"
+      ],
+      "order": 17
+    },
+    "capcut-cache/18.mp3": {
+      "label": "CapCut cache 018",
+      "category": "Tự tải lên",
+      "description": "Imported MP3 from CapCut cache; beat files were skipped and files were numbered in stable source-name order.",
+      "source": "CapCut cache",
+      "sourceUrl": "",
+      "license": "unverified",
+      "tags": [
+        "capcut",
+        "cache",
+        "imported",
+        "numbered"
+      ],
+      "order": 18
+    },
+    "capcut-cache/19.mp3": {
+      "label": "CapCut cache 019",
+      "category": "Tự tải lên",
+      "description": "Imported MP3 from CapCut cache; beat files were skipped and files were numbered in stable source-name order.",
+      "source": "CapCut cache",
+      "sourceUrl": "",
+      "license": "unverified",
+      "tags": [
+        "capcut",
+        "cache",
+        "imported",
+        "numbered"
+      ],
+      "order": 19
+    },
+    "capcut-cache/20.mp3": {
+      "label": "CapCut cache 020",
+      "category": "Tự tải lên",
+      "description": "Imported MP3 from CapCut cache; beat files were skipped and files were numbered in stable source-name order.",
+      "source": "CapCut cache",
+      "sourceUrl": "",
+      "license": "unverified",
+      "tags": [
+        "capcut",
+        "cache",
+        "imported",
+        "numbered"
+      ],
+      "order": 20
+    },
+    "capcut-cache/21.mp3": {
+      "label": "CapCut cache 021",
+      "category": "Tự tải lên",
+      "description": "Imported MP3 from CapCut cache; beat files were skipped and files were numbered in stable source-name order.",
+      "source": "CapCut cache",
+      "sourceUrl": "",
+      "license": "unverified",
+      "tags": [
+        "capcut",
+        "cache",
+        "imported",
+        "numbered"
+      ],
+      "order": 21
+    },
+    "capcut-cache/22.mp3": {
+      "label": "CapCut cache 022",
+      "category": "Tự tải lên",
+      "description": "Imported MP3 from CapCut cache; beat files were skipped and files were numbered in stable source-name order.",
+      "source": "CapCut cache",
+      "sourceUrl": "",
+      "license": "unverified",
+      "tags": [
+        "capcut",
+        "cache",
+        "imported",
+        "numbered"
+      ],
+      "order": 22
+    },
+    "capcut-cache/23.mp3": {
+      "label": "CapCut cache 023",
+      "category": "Tự tải lên",
+      "description": "Imported MP3 from CapCut cache; beat files were skipped and files were numbered in stable source-name order.",
+      "source": "CapCut cache",
+      "sourceUrl": "",
+      "license": "unverified",
+      "tags": [
+        "capcut",
+        "cache",
+        "imported",
+        "numbered"
+      ],
+      "order": 23
+    },
+    "capcut-cache/24.mp3": {
+      "label": "CapCut cache 024",
+      "category": "Tự tải lên",
+      "description": "Imported MP3 from CapCut cache; beat files were skipped and files were numbered in stable source-name order.",
+      "source": "CapCut cache",
+      "sourceUrl": "",
+      "license": "unverified",
+      "tags": [
+        "capcut",
+        "cache",
+        "imported",
+        "numbered"
+      ],
+      "order": 24
+    },
+    "capcut-cache/25.mp3": {
+      "label": "CapCut cache 025",
+      "category": "Tự tải lên",
+      "description": "Imported MP3 from CapCut cache; beat files were skipped and files were numbered in stable source-name order.",
+      "source": "CapCut cache",
+      "sourceUrl": "",
+      "license": "unverified",
+      "tags": [
+        "capcut",
+        "cache",
+        "imported",
+        "numbered"
+      ],
+      "order": 25
+    },
+    "capcut-cache/26.mp3": {
+      "label": "CapCut cache 026",
+      "category": "Tự tải lên",
+      "description": "Imported MP3 from CapCut cache; beat files were skipped and files were numbered in stable source-name order.",
+      "source": "CapCut cache",
+      "sourceUrl": "",
+      "license": "unverified",
+      "tags": [
+        "capcut",
+        "cache",
+        "imported",
+        "numbered"
+      ],
+      "order": 26
+    },
+    "capcut-cache/27.mp3": {
+      "label": "CapCut cache 027",
+      "category": "Tự tải lên",
+      "description": "Imported MP3 from CapCut cache; beat files were skipped and files were numbered in stable source-name order.",
+      "source": "CapCut cache",
+      "sourceUrl": "",
+      "license": "unverified",
+      "tags": [
+        "capcut",
+        "cache",
+        "imported",
+        "numbered"
+      ],
+      "order": 27
+    },
+    "capcut-cache/28.mp3": {
+      "label": "CapCut cache 028",
+      "category": "Tự tải lên",
+      "description": "Imported MP3 from CapCut cache; beat files were skipped and files were numbered in stable source-name order.",
+      "source": "CapCut cache",
+      "sourceUrl": "",
+      "license": "unverified",
+      "tags": [
+        "capcut",
+        "cache",
+        "imported",
+        "numbered"
+      ],
+      "order": 28
+    },
+    "capcut-cache/29.mp3": {
+      "label": "CapCut cache 029",
+      "category": "Tự tải lên",
+      "description": "Imported MP3 from CapCut cache; beat files were skipped and files were numbered in stable source-name order.",
+      "source": "CapCut cache",
+      "sourceUrl": "",
+      "license": "unverified",
+      "tags": [
+        "capcut",
+        "cache",
+        "imported",
+        "numbered"
+      ],
+      "order": 29
+    },
+    "capcut-cache/30.mp3": {
+      "label": "CapCut cache 030",
+      "category": "Tự tải lên",
+      "description": "Imported MP3 from CapCut cache; beat files were skipped and files were numbered in stable source-name order.",
+      "source": "CapCut cache",
+      "sourceUrl": "",
+      "license": "unverified",
+      "tags": [
+        "capcut",
+        "cache",
+        "imported",
+        "numbered"
+      ],
+      "order": 30
+    },
+    "capcut-cache/31.mp3": {
+      "label": "CapCut cache 031",
+      "category": "Tự tải lên",
+      "description": "Imported MP3 from CapCut cache; beat files were skipped and files were numbered in stable source-name order.",
+      "source": "CapCut cache",
+      "sourceUrl": "",
+      "license": "unverified",
+      "tags": [
+        "capcut",
+        "cache",
+        "imported",
+        "numbered"
+      ],
+      "order": 31
+    },
+    "capcut-cache/32.mp3": {
+      "label": "CapCut cache 032",
+      "category": "Tự tải lên",
+      "description": "Imported MP3 from CapCut cache; beat files were skipped and files were numbered in stable source-name order.",
+      "source": "CapCut cache",
+      "sourceUrl": "",
+      "license": "unverified",
+      "tags": [
+        "capcut",
+        "cache",
+        "imported",
+        "numbered"
+      ],
+      "order": 32
+    },
+    "capcut-cache/33.mp3": {
+      "label": "CapCut cache 033",
+      "category": "Tự tải lên",
+      "description": "Imported MP3 from CapCut cache; beat files were skipped and files were numbered in stable source-name order.",
+      "source": "CapCut cache",
+      "sourceUrl": "",
+      "license": "unverified",
+      "tags": [
+        "capcut",
+        "cache",
+        "imported",
+        "numbered"
+      ],
+      "order": 33
+    },
+    "capcut-cache/34.mp3": {
+      "label": "CapCut cache 034",
+      "category": "Tự tải lên",
+      "description": "Imported MP3 from CapCut cache; beat files were skipped and files were numbered in stable source-name order.",
+      "source": "CapCut cache",
+      "sourceUrl": "",
+      "license": "unverified",
+      "tags": [
+        "capcut",
+        "cache",
+        "imported",
+        "numbered"
+      ],
+      "order": 34
+    },
+    "capcut-cache/35.mp3": {
+      "label": "CapCut cache 035",
+      "category": "Tự tải lên",
+      "description": "Imported MP3 from CapCut cache; beat files were skipped and files were numbered in stable source-name order.",
+      "source": "CapCut cache",
+      "sourceUrl": "",
+      "license": "unverified",
+      "tags": [
+        "capcut",
+        "cache",
+        "imported",
+        "numbered"
+      ],
+      "order": 35
+    },
+    "capcut-cache/36.mp3": {
+      "label": "CapCut cache 036",
+      "category": "Tự tải lên",
+      "description": "Imported MP3 from CapCut cache; beat files were skipped and files were numbered in stable source-name order.",
+      "source": "CapCut cache",
+      "sourceUrl": "",
+      "license": "unverified",
+      "tags": [
+        "capcut",
+        "cache",
+        "imported",
+        "numbered"
+      ],
+      "order": 36
+    },
+    "capcut-cache/37.mp3": {
+      "label": "CapCut cache 037",
+      "category": "Tự tải lên",
+      "description": "Imported MP3 from CapCut cache; beat files were skipped and files were numbered in stable source-name order.",
+      "source": "CapCut cache",
+      "sourceUrl": "",
+      "license": "unverified",
+      "tags": [
+        "capcut",
+        "cache",
+        "imported",
+        "numbered"
+      ],
+      "order": 37
+    },
+    "capcut-cache/38.mp3": {
+      "label": "CapCut cache 038",
+      "category": "Tự tải lên",
+      "description": "Imported MP3 from CapCut cache; beat files were skipped and files were numbered in stable source-name order.",
+      "source": "CapCut cache",
+      "sourceUrl": "",
+      "license": "unverified",
+      "tags": [
+        "capcut",
+        "cache",
+        "imported",
+        "numbered"
+      ],
+      "order": 38
+    },
+    "capcut-cache/39.mp3": {
+      "label": "CapCut cache 039",
+      "category": "Tự tải lên",
+      "description": "Imported MP3 from CapCut cache; beat files were skipped and files were numbered in stable source-name order.",
+      "source": "CapCut cache",
+      "sourceUrl": "",
+      "license": "unverified",
+      "tags": [
+        "capcut",
+        "cache",
+        "imported",
+        "numbered"
+      ],
+      "order": 39
+    },
+    "capcut-cache/40.mp3": {
+      "label": "CapCut cache 040",
+      "category": "Tự tải lên",
+      "description": "Imported MP3 from CapCut cache; beat files were skipped and files were numbered in stable source-name order.",
+      "source": "CapCut cache",
+      "sourceUrl": "",
+      "license": "unverified",
+      "tags": [
+        "capcut",
+        "cache",
+        "imported",
+        "numbered"
+      ],
+      "order": 40
+    },
+    "capcut-cache/41.mp3": {
+      "label": "CapCut cache 041",
+      "category": "Tự tải lên",
+      "description": "Imported MP3 from CapCut cache; beat files were skipped and files were numbered in stable source-name order.",
+      "source": "CapCut cache",
+      "sourceUrl": "",
+      "license": "unverified",
+      "tags": [
+        "capcut",
+        "cache",
+        "imported",
+        "numbered"
+      ],
+      "order": 41
+    },
+    "capcut-cache/42.mp3": {
+      "label": "CapCut cache 042",
+      "category": "Tự tải lên",
+      "description": "Imported MP3 from CapCut cache; beat files were skipped and files were numbered in stable source-name order.",
+      "source": "CapCut cache",
+      "sourceUrl": "",
+      "license": "unverified",
+      "tags": [
+        "capcut",
+        "cache",
+        "imported",
+        "numbered"
+      ],
+      "order": 42
+    },
+    "capcut-cache/43.mp3": {
+      "label": "CapCut cache 043",
+      "category": "Tự tải lên",
+      "description": "Imported MP3 from CapCut cache; beat files were skipped and files were numbered in stable source-name order.",
+      "source": "CapCut cache",
+      "sourceUrl": "",
+      "license": "unverified",
+      "tags": [
+        "capcut",
+        "cache",
+        "imported",
+        "numbered"
+      ],
+      "order": 43
+    },
+    "capcut-cache/44.mp3": {
+      "label": "CapCut cache 044",
+      "category": "Tự tải lên",
+      "description": "Imported MP3 from CapCut cache; beat files were skipped and files were numbered in stable source-name order.",
+      "source": "CapCut cache",
+      "sourceUrl": "",
+      "license": "unverified",
+      "tags": [
+        "capcut",
+        "cache",
+        "imported",
+        "numbered"
+      ],
+      "order": 44
+    },
+    "capcut-cache/45.mp3": {
+      "label": "CapCut cache 045",
+      "category": "Tự tải lên",
+      "description": "Imported MP3 from CapCut cache; beat files were skipped and files were numbered in stable source-name order.",
+      "source": "CapCut cache",
+      "sourceUrl": "",
+      "license": "unverified",
+      "tags": [
+        "capcut",
+        "cache",
+        "imported",
+        "numbered"
+      ],
+      "order": 45
+    },
+    "capcut-cache/46.mp3": {
+      "label": "CapCut cache 046",
+      "category": "Tự tải lên",
+      "description": "Imported MP3 from CapCut cache; beat files were skipped and files were numbered in stable source-name order.",
+      "source": "CapCut cache",
+      "sourceUrl": "",
+      "license": "unverified",
+      "tags": [
+        "capcut",
+        "cache",
+        "imported",
+        "numbered"
+      ],
+      "order": 46
+    },
+    "capcut-cache/47.mp3": {
+      "label": "CapCut cache 047",
+      "category": "Tự tải lên",
+      "description": "Imported MP3 from CapCut cache; beat files were skipped and files were numbered in stable source-name order.",
+      "source": "CapCut cache",
+      "sourceUrl": "",
+      "license": "unverified",
+      "tags": [
+        "capcut",
+        "cache",
+        "imported",
+        "numbered"
+      ],
+      "order": 47
+    },
+    "capcut-cache/48.mp3": {
+      "label": "CapCut cache 048",
+      "category": "Tự tải lên",
+      "description": "Imported MP3 from CapCut cache; beat files were skipped and files were numbered in stable source-name order.",
+      "source": "CapCut cache",
+      "sourceUrl": "",
+      "license": "unverified",
+      "tags": [
+        "capcut",
+        "cache",
+        "imported",
+        "numbered"
+      ],
+      "order": 48
+    },
+    "capcut-cache/49.mp3": {
+      "label": "CapCut cache 049",
+      "category": "Tự tải lên",
+      "description": "Imported MP3 from CapCut cache; beat files were skipped and files were numbered in stable source-name order.",
+      "source": "CapCut cache",
+      "sourceUrl": "",
+      "license": "unverified",
+      "tags": [
+        "capcut",
+        "cache",
+        "imported",
+        "numbered"
+      ],
+      "order": 49
+    },
+    "capcut-cache/50.mp3": {
+      "label": "CapCut cache 050",
+      "category": "Tự tải lên",
+      "description": "Imported MP3 from CapCut cache; beat files were skipped and files were numbered in stable source-name order.",
+      "source": "CapCut cache",
+      "sourceUrl": "",
+      "license": "unverified",
+      "tags": [
+        "capcut",
+        "cache",
+        "imported",
+        "numbered"
+      ],
+      "order": 50
+    },
+    "capcut-cache/51.mp3": {
+      "label": "CapCut cache 051",
+      "category": "Tự tải lên",
+      "description": "Imported MP3 from CapCut cache; beat files were skipped and files were numbered in stable source-name order.",
+      "source": "CapCut cache",
+      "sourceUrl": "",
+      "license": "unverified",
+      "tags": [
+        "capcut",
+        "cache",
+        "imported",
+        "numbered"
+      ],
+      "order": 51
+    },
+    "capcut-cache/52.mp3": {
+      "label": "CapCut cache 052",
+      "category": "Tự tải lên",
+      "description": "Imported MP3 from CapCut cache; beat files were skipped and files were numbered in stable source-name order.",
+      "source": "CapCut cache",
+      "sourceUrl": "",
+      "license": "unverified",
+      "tags": [
+        "capcut",
+        "cache",
+        "imported",
+        "numbered"
+      ],
+      "order": 52
+    },
+    "capcut-cache/53.mp3": {
+      "label": "CapCut cache 053",
+      "category": "Tự tải lên",
+      "description": "Imported MP3 from CapCut cache; beat files were skipped and files were numbered in stable source-name order.",
+      "source": "CapCut cache",
+      "sourceUrl": "",
+      "license": "unverified",
+      "tags": [
+        "capcut",
+        "cache",
+        "imported",
+        "numbered"
+      ],
+      "order": 53
+    },
+    "capcut-cache/54.mp3": {
+      "label": "CapCut cache 054",
+      "category": "Tự tải lên",
+      "description": "Imported MP3 from CapCut cache; beat files were skipped and files were numbered in stable source-name order.",
+      "source": "CapCut cache",
+      "sourceUrl": "",
+      "license": "unverified",
+      "tags": [
+        "capcut",
+        "cache",
+        "imported",
+        "numbered"
+      ],
+      "order": 54
+    },
+    "capcut-cache/55.mp3": {
+      "label": "CapCut cache 055",
+      "category": "Tự tải lên",
+      "description": "Imported MP3 from CapCut cache; beat files were skipped and files were numbered in stable source-name order.",
+      "source": "CapCut cache",
+      "sourceUrl": "",
+      "license": "unverified",
+      "tags": [
+        "capcut",
+        "cache",
+        "imported",
+        "numbered"
+      ],
+      "order": 55
+    },
+    "capcut-cache/56.mp3": {
+      "label": "CapCut cache 056",
+      "category": "Tự tải lên",
+      "description": "Imported MP3 from CapCut cache; beat files were skipped and files were numbered in stable source-name order.",
+      "source": "CapCut cache",
+      "sourceUrl": "",
+      "license": "unverified",
+      "tags": [
+        "capcut",
+        "cache",
+        "imported",
+        "numbered"
+      ],
+      "order": 56
+    },
+    "capcut-cache/57.mp3": {
+      "label": "CapCut cache 057",
+      "category": "Tự tải lên",
+      "description": "Imported MP3 from CapCut cache; beat files were skipped and files were numbered in stable source-name order.",
+      "source": "CapCut cache",
+      "sourceUrl": "",
+      "license": "unverified",
+      "tags": [
+        "capcut",
+        "cache",
+        "imported",
+        "numbered"
+      ],
+      "order": 57
+    },
+    "capcut-cache/58.mp3": {
+      "label": "CapCut cache 058",
+      "category": "Tự tải lên",
+      "description": "Imported MP3 from CapCut cache; beat files were skipped and files were numbered in stable source-name order.",
+      "source": "CapCut cache",
+      "sourceUrl": "",
+      "license": "unverified",
+      "tags": [
+        "capcut",
+        "cache",
+        "imported",
+        "numbered"
+      ],
+      "order": 58
+    },
+    "capcut-cache/59.mp3": {
+      "label": "CapCut cache 059",
+      "category": "Tự tải lên",
+      "description": "Imported MP3 from CapCut cache; beat files were skipped and files were numbered in stable source-name order.",
+      "source": "CapCut cache",
+      "sourceUrl": "",
+      "license": "unverified",
+      "tags": [
+        "capcut",
+        "cache",
+        "imported",
+        "numbered"
+      ],
+      "order": 59
+    },
+    "capcut-cache/60.mp3": {
+      "label": "CapCut cache 060",
+      "category": "Tự tải lên",
+      "description": "Imported MP3 from CapCut cache; beat files were skipped and files were numbered in stable source-name order.",
+      "source": "CapCut cache",
+      "sourceUrl": "",
+      "license": "unverified",
+      "tags": [
+        "capcut",
+        "cache",
+        "imported",
+        "numbered"
+      ],
+      "order": 60
+    },
+    "capcut-cache/61.mp3": {
+      "label": "CapCut cache 061",
+      "category": "Tự tải lên",
+      "description": "Imported MP3 from CapCut cache; beat files were skipped and files were numbered in stable source-name order.",
+      "source": "CapCut cache",
+      "sourceUrl": "",
+      "license": "unverified",
+      "tags": [
+        "capcut",
+        "cache",
+        "imported",
+        "numbered"
+      ],
+      "order": 61
+    },
+    "capcut-cache/62.mp3": {
+      "label": "CapCut cache 062",
+      "category": "Tự tải lên",
+      "description": "Imported MP3 from CapCut cache; beat files were skipped and files were numbered in stable source-name order.",
+      "source": "CapCut cache",
+      "sourceUrl": "",
+      "license": "unverified",
+      "tags": [
+        "capcut",
+        "cache",
+        "imported",
+        "numbered"
+      ],
+      "order": 62
+    },
+    "capcut-cache/63.mp3": {
+      "label": "CapCut cache 063",
+      "category": "Tự tải lên",
+      "description": "Imported MP3 from CapCut cache; beat files were skipped and files were numbered in stable source-name order.",
+      "source": "CapCut cache",
+      "sourceUrl": "",
+      "license": "unverified",
+      "tags": [
+        "capcut",
+        "cache",
+        "imported",
+        "numbered"
+      ],
+      "order": 63
+    },
+    "capcut-cache/64.mp3": {
+      "label": "CapCut cache 064",
+      "category": "Tự tải lên",
+      "description": "Imported MP3 from CapCut cache; beat files were skipped and files were numbered in stable source-name order.",
+      "source": "CapCut cache",
+      "sourceUrl": "",
+      "license": "unverified",
+      "tags": [
+        "capcut",
+        "cache",
+        "imported",
+        "numbered"
+      ],
+      "order": 64
+    },
+    "capcut-cache/65.mp3": {
+      "label": "CapCut cache 065",
+      "category": "Tự tải lên",
+      "description": "Imported MP3 from CapCut cache; beat files were skipped and files were numbered in stable source-name order.",
+      "source": "CapCut cache",
+      "sourceUrl": "",
+      "license": "unverified",
+      "tags": [
+        "capcut",
+        "cache",
+        "imported",
+        "numbered"
+      ],
+      "order": 65
+    },
+    "capcut-cache/66.mp3": {
+      "label": "CapCut cache 066",
+      "category": "Tự tải lên",
+      "description": "Imported MP3 from CapCut cache; beat files were skipped and files were numbered in stable source-name order.",
+      "source": "CapCut cache",
+      "sourceUrl": "",
+      "license": "unverified",
+      "tags": [
+        "capcut",
+        "cache",
+        "imported",
+        "numbered"
+      ],
+      "order": 66
+    },
+    "capcut-cache/67.mp3": {
+      "label": "CapCut cache 067",
+      "category": "Tự tải lên",
+      "description": "Imported MP3 from CapCut cache; beat files were skipped and files were numbered in stable source-name order.",
+      "source": "CapCut cache",
+      "sourceUrl": "",
+      "license": "unverified",
+      "tags": [
+        "capcut",
+        "cache",
+        "imported",
+        "numbered"
+      ],
+      "order": 67
+    },
+    "capcut-cache/68.mp3": {
+      "label": "CapCut cache 068",
+      "category": "Tự tải lên",
+      "description": "Imported MP3 from CapCut cache; beat files were skipped and files were numbered in stable source-name order.",
+      "source": "CapCut cache",
+      "sourceUrl": "",
+      "license": "unverified",
+      "tags": [
+        "capcut",
+        "cache",
+        "imported",
+        "numbered"
+      ],
+      "order": 68
+    },
+    "capcut-cache/69.mp3": {
+      "label": "CapCut cache 069",
+      "category": "Tự tải lên",
+      "description": "Imported MP3 from CapCut cache; beat files were skipped and files were numbered in stable source-name order.",
+      "source": "CapCut cache",
+      "sourceUrl": "",
+      "license": "unverified",
+      "tags": [
+        "capcut",
+        "cache",
+        "imported",
+        "numbered"
+      ],
+      "order": 69
+    },
+    "capcut-cache/70.mp3": {
+      "label": "CapCut cache 070",
+      "category": "Tự tải lên",
+      "description": "Imported MP3 from CapCut cache; beat files were skipped and files were numbered in stable source-name order.",
+      "source": "CapCut cache",
+      "sourceUrl": "",
+      "license": "unverified",
+      "tags": [
+        "capcut",
+        "cache",
+        "imported",
+        "numbered"
+      ],
+      "order": 70
+    },
+    "capcut-cache/71.mp3": {
+      "label": "CapCut cache 071",
+      "category": "Tự tải lên",
+      "description": "Imported MP3 from CapCut cache; beat files were skipped and files were numbered in stable source-name order.",
+      "source": "CapCut cache",
+      "sourceUrl": "",
+      "license": "unverified",
+      "tags": [
+        "capcut",
+        "cache",
+        "imported",
+        "numbered"
+      ],
+      "order": 71
+    },
+    "capcut-cache/72.mp3": {
+      "label": "CapCut cache 072",
+      "category": "Tự tải lên",
+      "description": "Imported MP3 from CapCut cache; beat files were skipped and files were numbered in stable source-name order.",
+      "source": "CapCut cache",
+      "sourceUrl": "",
+      "license": "unverified",
+      "tags": [
+        "capcut",
+        "cache",
+        "imported",
+        "numbered"
+      ],
+      "order": 72
+    },
+    "capcut-cache/73.mp3": {
+      "label": "CapCut cache 073",
+      "category": "Tự tải lên",
+      "description": "Imported MP3 from CapCut cache; beat files were skipped and files were numbered in stable source-name order.",
+      "source": "CapCut cache",
+      "sourceUrl": "",
+      "license": "unverified",
+      "tags": [
+        "capcut",
+        "cache",
+        "imported",
+        "numbered"
+      ],
+      "order": 73
+    },
+    "capcut-cache/74.mp3": {
+      "label": "CapCut cache 074",
+      "category": "Tự tải lên",
+      "description": "Imported MP3 from CapCut cache; beat files were skipped and files were numbered in stable source-name order.",
+      "source": "CapCut cache",
+      "sourceUrl": "",
+      "license": "unverified",
+      "tags": [
+        "capcut",
+        "cache",
+        "imported",
+        "numbered"
+      ],
+      "order": 74
+    },
+    "capcut-cache/75.mp3": {
+      "label": "CapCut cache 075",
+      "category": "Tự tải lên",
+      "description": "Imported MP3 from CapCut cache; beat files were skipped and files were numbered in stable source-name order.",
+      "source": "CapCut cache",
+      "sourceUrl": "",
+      "license": "unverified",
+      "tags": [
+        "capcut",
+        "cache",
+        "imported",
+        "numbered"
+      ],
+      "order": 75
+    },
+    "capcut-cache/76.mp3": {
+      "label": "CapCut cache 076",
+      "category": "Tự tải lên",
+      "description": "Imported MP3 from CapCut cache; beat files were skipped and files were numbered in stable source-name order.",
+      "source": "CapCut cache",
+      "sourceUrl": "",
+      "license": "unverified",
+      "tags": [
+        "capcut",
+        "cache",
+        "imported",
+        "numbered"
+      ],
+      "order": 76
+    },
+    "capcut-cache/77.mp3": {
+      "label": "CapCut cache 077",
+      "category": "Tự tải lên",
+      "description": "Imported MP3 from CapCut cache; beat files were skipped and files were numbered in stable source-name order.",
+      "source": "CapCut cache",
+      "sourceUrl": "",
+      "license": "unverified",
+      "tags": [
+        "capcut",
+        "cache",
+        "imported",
+        "numbered"
+      ],
+      "order": 77
+    },
+    "capcut-cache/78.mp3": {
+      "label": "CapCut cache 078",
+      "category": "Tự tải lên",
+      "description": "Imported MP3 from CapCut cache; beat files were skipped and files were numbered in stable source-name order.",
+      "source": "CapCut cache",
+      "sourceUrl": "",
+      "license": "unverified",
+      "tags": [
+        "capcut",
+        "cache",
+        "imported",
+        "numbered"
+      ],
+      "order": 78
+    },
+    "capcut-cache/79.mp3": {
+      "label": "CapCut cache 079",
+      "category": "Tự tải lên",
+      "description": "Imported MP3 from CapCut cache; beat files were skipped and files were numbered in stable source-name order.",
+      "source": "CapCut cache",
+      "sourceUrl": "",
+      "license": "unverified",
+      "tags": [
+        "capcut",
+        "cache",
+        "imported",
+        "numbered"
+      ],
+      "order": 79
+    },
+    "capcut-cache/80.mp3": {
+      "label": "CapCut cache 080",
+      "category": "Tự tải lên",
+      "description": "Imported MP3 from CapCut cache; beat files were skipped and files were numbered in stable source-name order.",
+      "source": "CapCut cache",
+      "sourceUrl": "",
+      "license": "unverified",
+      "tags": [
+        "capcut",
+        "cache",
+        "imported",
+        "numbered"
+      ],
+      "order": 80
+    },
+    "capcut-cache/81.mp3": {
+      "label": "CapCut cache 081",
+      "category": "Tự tải lên",
+      "description": "Imported MP3 from CapCut cache; beat files were skipped and files were numbered in stable source-name order.",
+      "source": "CapCut cache",
+      "sourceUrl": "",
+      "license": "unverified",
+      "tags": [
+        "capcut",
+        "cache",
+        "imported",
+        "numbered"
+      ],
+      "order": 81
+    },
+    "capcut-cache/82.mp3": {
+      "label": "CapCut cache 082",
+      "category": "Tự tải lên",
+      "description": "Imported MP3 from CapCut cache; beat files were skipped and files were numbered in stable source-name order.",
+      "source": "CapCut cache",
+      "sourceUrl": "",
+      "license": "unverified",
+      "tags": [
+        "capcut",
+        "cache",
+        "imported",
+        "numbered"
+      ],
+      "order": 82
+    },
+    "capcut-cache/83.mp3": {
+      "label": "CapCut cache 083",
+      "category": "Tự tải lên",
+      "description": "Imported MP3 from CapCut cache; beat files were skipped and files were numbered in stable source-name order.",
+      "source": "CapCut cache",
+      "sourceUrl": "",
+      "license": "unverified",
+      "tags": [
+        "capcut",
+        "cache",
+        "imported",
+        "numbered"
+      ],
+      "order": 83
+    },
+    "capcut-cache/84.mp3": {
+      "label": "CapCut cache 084",
+      "category": "Tự tải lên",
+      "description": "Imported MP3 from CapCut cache; beat files were skipped and files were numbered in stable source-name order.",
+      "source": "CapCut cache",
+      "sourceUrl": "",
+      "license": "unverified",
+      "tags": [
+        "capcut",
+        "cache",
+        "imported",
+        "numbered"
+      ],
+      "order": 84
+    },
+    "capcut-cache/85.mp3": {
+      "label": "CapCut cache 085",
+      "category": "Tự tải lên",
+      "description": "Imported MP3 from CapCut cache; beat files were skipped and files were numbered in stable source-name order.",
+      "source": "CapCut cache",
+      "sourceUrl": "",
+      "license": "unverified",
+      "tags": [
+        "capcut",
+        "cache",
+        "imported",
+        "numbered"
+      ],
+      "order": 85
+    },
+    "capcut-cache/86.mp3": {
+      "label": "CapCut cache 086",
+      "category": "Tự tải lên",
+      "description": "Imported MP3 from CapCut cache; beat files were skipped and files were numbered in stable source-name order.",
+      "source": "CapCut cache",
+      "sourceUrl": "",
+      "license": "unverified",
+      "tags": [
+        "capcut",
+        "cache",
+        "imported",
+        "numbered"
+      ],
+      "order": 86
+    },
+    "capcut-cache/87.mp3": {
+      "label": "CapCut cache 087",
+      "category": "Tự tải lên",
+      "description": "Imported MP3 from CapCut cache; beat files were skipped and files were numbered in stable source-name order.",
+      "source": "CapCut cache",
+      "sourceUrl": "",
+      "license": "unverified",
+      "tags": [
+        "capcut",
+        "cache",
+        "imported",
+        "numbered"
+      ],
+      "order": 87
+    },
+    "capcut-cache/88.mp3": {
+      "label": "CapCut cache 088",
+      "category": "Tự tải lên",
+      "description": "Imported MP3 from CapCut cache; beat files were skipped and files were numbered in stable source-name order.",
+      "source": "CapCut cache",
+      "sourceUrl": "",
+      "license": "unverified",
+      "tags": [
+        "capcut",
+        "cache",
+        "imported",
+        "numbered"
+      ],
+      "order": 88
+    },
+    "capcut-cache/89.mp3": {
+      "label": "CapCut cache 089",
+      "category": "Tự tải lên",
+      "description": "Imported MP3 from CapCut cache; beat files were skipped and files were numbered in stable source-name order.",
+      "source": "CapCut cache",
+      "sourceUrl": "",
+      "license": "unverified",
+      "tags": [
+        "capcut",
+        "cache",
+        "imported",
+        "numbered"
+      ],
+      "order": 89
+    },
+    "capcut-cache/90.mp3": {
+      "label": "CapCut cache 090",
+      "category": "Tự tải lên",
+      "description": "Imported MP3 from CapCut cache; beat files were skipped and files were numbered in stable source-name order.",
+      "source": "CapCut cache",
+      "sourceUrl": "",
+      "license": "unverified",
+      "tags": [
+        "capcut",
+        "cache",
+        "imported",
+        "numbered"
+      ],
+      "order": 90
+    },
+    "capcut-cache/91.mp3": {
+      "label": "CapCut cache 091",
+      "category": "Tự tải lên",
+      "description": "Imported MP3 from CapCut cache; beat files were skipped and files were numbered in stable source-name order.",
+      "source": "CapCut cache",
+      "sourceUrl": "",
+      "license": "unverified",
+      "tags": [
+        "capcut",
+        "cache",
+        "imported",
+        "numbered"
+      ],
+      "order": 91
+    },
+    "capcut-cache/92.mp3": {
+      "label": "CapCut cache 092",
+      "category": "Tự tải lên",
+      "description": "Imported MP3 from CapCut cache; beat files were skipped and files were numbered in stable source-name order.",
+      "source": "CapCut cache",
+      "sourceUrl": "",
+      "license": "unverified",
+      "tags": [
+        "capcut",
+        "cache",
+        "imported",
+        "numbered"
+      ],
+      "order": 92
+    },
+    "capcut-cache/93.mp3": {
+      "label": "CapCut cache 093",
+      "category": "Tự tải lên",
+      "description": "Imported MP3 from CapCut cache; beat files were skipped and files were numbered in stable source-name order.",
+      "source": "CapCut cache",
+      "sourceUrl": "",
+      "license": "unverified",
+      "tags": [
+        "capcut",
+        "cache",
+        "imported",
+        "numbered"
+      ],
+      "order": 93
+    },
+    "capcut-cache/94.mp3": {
+      "label": "CapCut cache 094",
+      "category": "Tự tải lên",
+      "description": "Imported MP3 from CapCut cache; beat files were skipped and files were numbered in stable source-name order.",
+      "source": "CapCut cache",
+      "sourceUrl": "",
+      "license": "unverified",
+      "tags": [
+        "capcut",
+        "cache",
+        "imported",
+        "numbered"
+      ],
+      "order": 94
+    },
+    "capcut-cache/95.mp3": {
+      "label": "CapCut cache 095",
+      "category": "Tự tải lên",
+      "description": "Imported MP3 from CapCut cache; beat files were skipped and files were numbered in stable source-name order.",
+      "source": "CapCut cache",
+      "sourceUrl": "",
+      "license": "unverified",
+      "tags": [
+        "capcut",
+        "cache",
+        "imported",
+        "numbered"
+      ],
+      "order": 95
+    },
+    "capcut-cache/96.mp3": {
+      "label": "CapCut cache 096",
+      "category": "Tự tải lên",
+      "description": "Imported MP3 from CapCut cache; beat files were skipped and files were numbered in stable source-name order.",
+      "source": "CapCut cache",
+      "sourceUrl": "",
+      "license": "unverified",
+      "tags": [
+        "capcut",
+        "cache",
+        "imported",
+        "numbered"
+      ],
+      "order": 96
+    },
+    "capcut-cache/97.mp3": {
+      "label": "CapCut cache 097",
+      "category": "Tự tải lên",
+      "description": "Imported MP3 from CapCut cache; beat files were skipped and files were numbered in stable source-name order.",
+      "source": "CapCut cache",
+      "sourceUrl": "",
+      "license": "unverified",
+      "tags": [
+        "capcut",
+        "cache",
+        "imported",
+        "numbered"
+      ],
+      "order": 97
+    },
+    "capcut-cache/98.mp3": {
+      "label": "CapCut cache 098",
+      "category": "Tự tải lên",
+      "description": "Imported MP3 from CapCut cache; beat files were skipped and files were numbered in stable source-name order.",
+      "source": "CapCut cache",
+      "sourceUrl": "",
+      "license": "unverified",
+      "tags": [
+        "capcut",
+        "cache",
+        "imported",
+        "numbered"
+      ],
+      "order": 98
+    },
+    "capcut-cache/99.mp3": {
+      "label": "CapCut cache 099",
+      "category": "Tự tải lên",
+      "description": "Imported MP3 from CapCut cache; beat files were skipped and files were numbered in stable source-name order.",
+      "source": "CapCut cache",
+      "sourceUrl": "",
+      "license": "unverified",
+      "tags": [
+        "capcut",
+        "cache",
+        "imported",
+        "numbered"
+      ],
+      "order": 99
+    }
+  }
+}

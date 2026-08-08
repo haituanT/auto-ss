@@ -1,0 +1,33 @@
+{
+  "version": 1,
+  "slug": "day-la-adn-day-la-gen",
+  "revisions": {
+    "content": 1,
+    "audio": 2,
+    "visual": 9,
+    "assets": 2,
+    "preview": 2,
+    "render": 0
+  },
+  "hashes": {
+    "content": "f358cdb9c49aad5c",
+    "audioSelection": "239eac7d397b7ef2",
+    "audio": "c8b6dcdfd5064cd7",
+    "visual": "847fcb859e7c69bd",
+    "assets": "3a188fa52437b046",
+    "previewProps": "8cd7cd0c479d",
+    "assetManifest": "f9c4bc5dd3ade3684159f99bd9e5718b04f52107bcdab59edf27bc9ad3d1d6aa",
+    "renderProps": ""
+  },
+  "ready": {
+    "audio": true,
+    "preview": true,
+    "render": false
+  },
+  "artifacts": {
+    "audioManifest": "assets/vo/manifest.json",
+    "previewSnapshot": "snapshots/render-final/snapshot.json",
+    "officialRender": ""
+  },
+  "updatedAt": "2026-08-08T03:31:48.766Z"
+}

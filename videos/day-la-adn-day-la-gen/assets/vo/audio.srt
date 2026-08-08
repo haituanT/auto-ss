@@ -1,0 +1,39 @@
+1
+00:00:00,550 --> 00:00:02,116
+[L] Đây là ADN.
+
+2
+00:00:02,236 --> 00:00:02,992
+[R] Đây là gen.
+
+3
+00:00:03,112 --> 00:00:04,264
+[Q] Sự khác nhau là gì?
+
+4
+00:00:04,384 --> 00:00:11,836
+[L] ADN là phân tử mang thông tin di truyền của sinh vật. Nó giống như một cuốn sách hướng dẫn rất dài, chứa các thông tin giúp cơ thể hình thành, phát triển và hoạt động.
+
+5
+00:00:11,956 --> 00:00:19,444
+[R] Gen là một đoạn ADN có chức năng nhất định. Nó có thể mang thông tin liên quan đến việc tạo ra một loại protein hoặc ảnh hưởng đến một đặc điểm sinh học nào đó.
+
+6
+00:00:19,564 --> 00:00:21,220
+[L] Đây là hồng cầu.
+
+7
+00:00:21,340 --> 00:00:22,852
+[R] Đây là bạch cầu.
+
+8
+00:00:22,972 --> 00:00:24,016
+[Q] Sự khác nhau là gì?
+
+9
+00:00:24,136 --> 00:00:36,988
+[L] Hồng cầu là tế bào máu có nhiệm vụ chính là vận chuyển oxy. Nhờ hồng cầu, oxy từ phổi được đưa đi khắp cơ thể để não, tim, cơ bắp và các cơ quan khác hoạt động. Có màu đỏ vì chứa huyết sắc tố, nên máu của chúng ta nhìn có màu đỏ.
+
+10
+00:00:37,108 --> 00:00:45,244
+[R] Bạch cầu thì khác nó liên quan đến hệ miễn dịch. Nó giống như đội bảo vệ của cơ thể, giúp chống lại vi khuẩn, virus, ký sinh trùng hoặc những yếu tố lạ xâm nhập.

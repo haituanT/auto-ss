@@ -1,0 +1,21 @@
+{
+  "id": "default",
+  "updatedAt": "2026-07-25T18:38:48.728Z",
+  "poses": {
+    "point-left": {
+      "label": "Tay chỉ trái màn hình",
+      "original": "originals/point-left.mov",
+      "processed": "processed/point-left.webm"
+    },
+    "point-right": {
+      "label": "Tay chỉ phải màn hình",
+      "original": "originals/point-right.mov",
+      "processed": "processed/point-right.webm"
+    },
+    "question": {
+      "label": "Đặt câu hỏi",
+      "original": "originals/question.mov",
+      "processed": "processed/question.webm"
+    }
+  }
+}
