@@ -14,7 +14,7 @@ Project này là video dọc 1080×1920 về sự khác nhau giữa ADN và gen,
 
 1. Cài Node.js 18 trở lên một lần: <https://nodejs.org/en/download>
 2. Tải repository về máy.
-3. Bấm đúp `setup.bat`. File này tự tạo `.env` từ `.env.example` và chạy `npm install` để cài thư viện.
+3. Bấm đúp `setup.bat`. File này tự kiểm tra/cài Git nếu thiếu, tự tạo `.env` từ `.env.example` và chạy `npm install` để cài thư viện.
 4. Bấm đúp `start-studio.bat` để mở ứng dụng.
 
 `node_modules/`, `.env`, API key, file tạm, render và project video riêng không nằm trong repository. API key chỉ điền trong `.env` trên máy cần tạo voiceover mới.

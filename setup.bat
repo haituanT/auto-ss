@@ -9,6 +9,39 @@ echo Auto Compare Studio - cai moi truong
 echo ====================================
 echo.
 
+rem Git is required by the in-app update checker.
+if exist "%ProgramFiles%\Git\cmd\git.exe" set "PATH=%ProgramFiles%\Git\cmd;%PATH%"
+if exist "%LocalAppData%\Programs\Git\cmd\git.exe" set "PATH=%LocalAppData%\Programs\Git\cmd;%PATH%"
+where git >nul 2>&1
+if errorlevel 1 (
+  echo Chua tim thay Git. Dang thu cai Git for Windows...
+  where winget >nul 2>&1
+  if errorlevel 1 (
+    echo Khong tim thay winget tren may nay.
+    echo Hay cai Git tai: https://git-scm.com/install/windows
+    start "" "https://git-scm.com/install/windows"
+    pause
+    exit /b 1
+  )
+  winget install --id Git.Git -e --source winget --accept-source-agreements --accept-package-agreements
+  if errorlevel 1 (
+    echo Cai Git that bai. Hay cai thu cong tai: https://git-scm.com/install/windows
+    start "" "https://git-scm.com/install/windows"
+    pause
+    exit /b 1
+  )
+  if exist "%ProgramFiles%\Git\cmd\git.exe" set "PATH=%ProgramFiles%\Git\cmd;%PATH%"
+  if exist "%LocalAppData%\Programs\Git\cmd\git.exe" set "PATH=%LocalAppData%\Programs\Git\cmd;%PATH%"
+)
+
+where git >nul 2>&1
+if errorlevel 1 (
+  echo Khong tim thay Git sau khi cai. Hay dong cua so nay, mo lai roi chay setup.bat.
+  pause
+  exit /b 1
+)
+git --version
+
 where node >nul 2>&1
 if errorlevel 1 (
   echo Khong tim thay Node.js 18+.
